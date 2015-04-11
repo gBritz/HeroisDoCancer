@@ -128,17 +128,23 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ContextoDados\DadosEmMemoria.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VoluntarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Comentario.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Hospital.cs" />
+    <Compile Include="Models\IContextoDados.cs" />
     <Compile Include="Models\TipoSituacaoEnum.cs" />
     <Compile Include="Models\Voluntario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Exceptions\CamposInvalidosException.cs" />
+    <Compile Include="Services\VoluntarioService.cs" />
+    <Compile Include="ViewModels\RespostaOperacaoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate.css" />
