@@ -9,12 +9,12 @@ namespace HeroisDoCancer
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-1.8.2.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            bundles.Add(new ScriptBundle("~/bundles/jquerymin").Include(
                         "~/Scripts/jquery-{version}.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

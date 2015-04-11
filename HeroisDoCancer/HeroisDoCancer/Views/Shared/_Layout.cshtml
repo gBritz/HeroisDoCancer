@@ -17,11 +17,11 @@
             <div class="menu">
                 <a class="toggleMenu" href="#"><img src="~/Content/images/nav.png" alt="" /></a>
                 <ul class="nav" id="nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="living.html">Seja Voluntário</a></li>
-                    <li><a href="education.html">Eventos</a></li>
-                    <li><a href="entertain.html">Galeria de Fotos</a></li>
-                    <li><a href="404.html">Contato</a></li>
+                    <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Seja um Voluntário", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Eventos", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Galeria de Fotos", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Contato", "Index", "Home")</li>
                     <div class="clearfix"></div>
                 </ul>
             </div>
@@ -37,7 +37,7 @@
             </div>
             <!----search-scripts---->
             <script>
-                new UISearch(document.getElementById('sb-search'));
+                //new UISearch(document.getElementById('sb-search'));
             </script>
             <!----//search-scripts---->
             <div class="clearfix"></div>
@@ -93,6 +93,7 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquerymin")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/outhers")
     @RenderSection("scripts", required: false)
