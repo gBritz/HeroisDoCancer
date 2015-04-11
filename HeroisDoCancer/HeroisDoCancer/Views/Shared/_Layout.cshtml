@@ -43,7 +43,7 @@
             <div class="clearfix"></div>
         </div>
         <!--login-->
-        @*@{Html.RenderPartial()}*@
+        @{Html.RenderPartial("_Login");}
         <div class="clearfix"></div>
     </div>
 
@@ -93,6 +93,7 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquerymin")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/outhers")
     @RenderSection("scripts", required: false)
