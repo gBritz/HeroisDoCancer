@@ -9,7 +9,7 @@ namespace HeroisDoCancer.Models
     {
         public int Id { get; set; }
         public DateTime DataHora { get; set; }
-        public string? Descricao { get; set; }
+        public string Descricao { get; set; }
         public Hospital Hospital { get; set; }
         public int NroMaximoParticipantes { get; set; }
         public ICollection<Voluntario> Participante { get; set; }

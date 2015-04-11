@@ -9,7 +9,7 @@ namespace HeroisDoCancer.Models
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
-        public Voluntario? Voluntario { get; set; }
+        public Voluntario Voluntario { get; set; }
 
         //nome da pessoa que está escrevedo o comentário, caso não esteja logado.
         public string Nome { get; set; } 
