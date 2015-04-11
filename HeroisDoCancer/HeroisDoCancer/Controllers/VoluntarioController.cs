@@ -17,6 +17,12 @@ namespace HeroisDoCancer.Controllers
             this.service = new VoluntarioService(contexto);
         }
 
+        [HttpGet]
+        public ActionResult Cadastro()
+        {
+            return View("Index");
+        }
+
         [HttpPost]
         public ActionResult Cadastro(Voluntario voluntario)
         {
