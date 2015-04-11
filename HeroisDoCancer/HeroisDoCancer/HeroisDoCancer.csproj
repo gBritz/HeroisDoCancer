@@ -128,17 +128,25 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ContextoDados\DadosEmMemoria.cs" />
     <Compile Include="Controllers\EventoController.cs" />
+    <Compile Include="Controllers\GaleriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VoluntarioController.cs" />
+    <Compile Include="Controllers\SejaVoluntarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Comentario.cs" />
     <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Hospital.cs" />
+    <Compile Include="Models\IContextoDados.cs" />
     <Compile Include="Models\TipoSituacaoEnum.cs" />
     <Compile Include="Models\Voluntario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Exceptions\CamposInvalidosException.cs" />
+    <Compile Include="Services\VoluntarioService.cs" />
+    <Compile Include="ViewModels\RespostaOperacaoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate.css" />
@@ -204,6 +212,7 @@
     <Content Include="Content\images\zoom.png" />
     <Content Include="Content\style.css" />
     <Content Include="Content\swipebox.css" />
+    <Content Include="Content\teste.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -301,6 +310,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\_Login.cshtml" />
+    <Content Include="Views\SejaVoluntario\Index.cshtml" />
+    <Content Include="Views\Evento\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
