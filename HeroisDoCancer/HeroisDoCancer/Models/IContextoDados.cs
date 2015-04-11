@@ -11,7 +11,5 @@ namespace HeroisDoCancer.Models
         void Remove<TModel>(TModel model) where TModel : class;
 
         void Publica();
-
-        void Limpa();
     }
 }
