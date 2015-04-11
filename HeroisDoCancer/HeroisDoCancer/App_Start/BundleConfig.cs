@@ -22,17 +22,22 @@ namespace HeroisDoCancer
                         "~/Scripts/jquery.easydropdown.js",
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/boots").Include(
+                        "~/Scripts/bootstrap.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/outhers").Include(
                         "~/Scripts/login.js",
                         "~/Scripts/wow.min.js",
                         "~/Scripts/classie.js",
                         "~/Scripts/uisearch.js",
-                        "~/Scripts/responsive-nav.js"));
+                        "~/Scripts/responsive-nav.js",
+                        "~/Scripts/bootstrap.min.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
+     
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/site.css",

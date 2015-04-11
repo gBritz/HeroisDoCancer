@@ -143,6 +143,8 @@
   <ItemGroup>
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\images\area.png" />
     <Content Include="Content\images\arrow.png" />
     <Content Include="Content\images\banner.jpg" />
@@ -154,6 +156,13 @@
     <Content Include="Content\images\e4.jpg" />
     <Content Include="Content\images\filter.png" />
     <Content Include="Content\images\footer.jpg" />
+    <Content Include="Content\images\herois1.jpg" />
+    <Content Include="Content\images\herois2.jpg" />
+    <Content Include="Content\images\herois3.jpg" />
+    <Content Include="Content\images\herois4.png" />
+    <Content Include="Content\images\herois5.jpg" />
+    <Content Include="Content\images\herois6.jpg" />
+    <Content Include="Content\images\herois7.jpg" />
     <Content Include="Content\images\home1.png" />
     <Content Include="Content\images\h_search.png" />
     <Content Include="Content\images\icons.png" />
@@ -186,6 +195,9 @@
     <Content Include="Content\images\pic6.jpg" />
     <Content Include="Content\images\search.png" />
     <Content Include="Content\images\set.png" />
+    <Content Include="Content\images\slider1.jpg" />
+    <Content Include="Content\images\slider2.jpg" />
+    <Content Include="Content\images\slider4.jpg" />
     <Content Include="Content\images\star.png" />
     <Content Include="Content\images\star1.png" />
     <Content Include="Content\images\star2.png" />
@@ -249,7 +261,12 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\images\Thumbs.db" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
