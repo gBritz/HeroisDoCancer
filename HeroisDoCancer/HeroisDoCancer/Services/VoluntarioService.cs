@@ -1,5 +1,7 @@
 ﻿using HeroisDoCancer.Models;
+using HeroisDoCancer.Services.Exceptions;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace HeroisDoCancer.Services
@@ -21,8 +23,9 @@ namespace HeroisDoCancer.Services
             if (voluntario == null)
                 throw new ArgumentNullException("voluntario");
 
-            if (!ValidoCadastro(voluntario))
-                throw new Exception("Dados incompletos.");
+            var campos = ValidarCampos(voluntario);
+            if (campos.Count > 0)
+                throw new CamposInvalidosException(campos);
 
             if (ExistePeloNome(voluntario))
                 throw new Exception("Nome de voluntario já existe.");
@@ -36,9 +39,20 @@ namespace HeroisDoCancer.Services
             return this.contexto.Voluntarios.Any(v => v.Nome.Equals(voluntario.Nome, StringComparison.InvariantCultureIgnoreCase));
         }
 
-        protected virtual Boolean ValidoCadastro(Voluntario voluntario)
+        public virtual IDictionary<String, String[]> ValidarCampos(Voluntario voluntario)
         {
-            throw new NotImplementedException("TODO");
+            var campos = new Dictionary<String, String[]>();
+
+            if (String.IsNullOrEmpty(voluntario.Nome))
+                campos.Add("Nome", new []{ "Campo obrigatório." });
+
+            if (String.IsNullOrEmpty(voluntario.Senha))
+                campos.Add("Senha", new[] { "Campo obrigatório." });
+
+            if (String.IsNullOrEmpty(voluntario.Email))
+                campos.Add("Email", new[] { "Campo obrigatório." });
+
+            return campos;
         }
     }
 }

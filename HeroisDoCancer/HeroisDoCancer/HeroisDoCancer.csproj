@@ -142,6 +142,7 @@
     <Compile Include="Models\TipoSituacaoEnum.cs" />
     <Compile Include="Models\Voluntario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Exceptions\CamposInvalidosException.cs" />
     <Compile Include="Services\VoluntarioService.cs" />
     <Compile Include="ViewModels\RespostaOperacaoViewModel.cs" />
   </ItemGroup>
