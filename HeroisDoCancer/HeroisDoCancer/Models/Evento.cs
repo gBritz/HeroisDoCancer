@@ -7,15 +7,15 @@ namespace HeroisDoCancer.Models
 {
     public class Evento
     {
-        int Id { get; set; }
-        DateTime DataHora { get; set; }
-        string Descricao { get; set; }
-        Hospital Hospital { get; set; }
-        int NroMaximoParticipantes { get; set; }
-        ICollection<Voluntario> Participante { get; set; }
-        TipoSituacaoEnum TipoSituacao { get; set; }
-        ICollection<Comentario> Comentarios { get; set; }
-        ICollection<Comentario> Depoimentos { get; set; }
-        ICollection<string> Fotos { get; set; }
+        public int Id { get; set; }
+        public DateTime DataHora { get; set; }
+        public string? Descricao { get; set; }
+        public Hospital Hospital { get; set; }
+        public int NroMaximoParticipantes { get; set; }
+        public ICollection<Voluntario> Participante { get; set; }
+        public TipoSituacaoEnum TipoSituacao { get; set; }
+        public ICollection<Comentario> Comentarios { get; set; }
+        public ICollection<Comentario> Depoimentos { get; set; }
+        public ICollection<string> Fotos { get; set; }
     }
 }
