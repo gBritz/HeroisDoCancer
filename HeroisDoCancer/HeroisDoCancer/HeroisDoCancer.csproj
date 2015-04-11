@@ -133,9 +133,65 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Comentario.cs" />
+    <Compile Include="Models\Evento.cs" />
+    <Compile Include="Models\Hospital.cs" />
+    <Compile Include="Models\TipoSituacaoEnum.cs" />
+    <Compile Include="Models\Voluntario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\images\area.png" />
+    <Content Include="Content\images\arrow.png" />
+    <Content Include="Content\images\banner.jpg" />
+    <Content Include="Content\images\bed.png" />
+    <Content Include="Content\images\drop.png" />
+    <Content Include="Content\images\e1.jpg" />
+    <Content Include="Content\images\e2.jpg" />
+    <Content Include="Content\images\e3.jpg" />
+    <Content Include="Content\images\e4.jpg" />
+    <Content Include="Content\images\filter.png" />
+    <Content Include="Content\images\footer.jpg" />
+    <Content Include="Content\images\home1.png" />
+    <Content Include="Content\images\h_search.png" />
+    <Content Include="Content\images\icons.png" />
+    <Content Include="Content\images\icons.svg" />
+    <Content Include="Content\images\img-sprite.png" />
+    <Content Include="Content\images\l1.jpg" />
+    <Content Include="Content\images\l2.jpg" />
+    <Content Include="Content\images\l3.jpg" />
+    <Content Include="Content\images\login.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\m1.jpg" />
+    <Content Include="Content\images\m2.jpg" />
+    <Content Include="Content\images\mail.png" />
+    <Content Include="Content\images\m_star.png" />
+    <Content Include="Content\images\m_star1.png" />
+    <Content Include="Content\images\nav.png" />
+    <Content Include="Content\images\p1.jpg" />
+    <Content Include="Content\images\p2.jpg" />
+    <Content Include="Content\images\p3.jpg" />
+    <Content Include="Content\images\p4.jpg" />
+    <Content Include="Content\images\p5.jpg" />
+    <Content Include="Content\images\p6.jpg" />
+    <Content Include="Content\images\p7.jpg" />
+    <Content Include="Content\images\p8.jpg" />
+    <Content Include="Content\images\pic1.jpg" />
+    <Content Include="Content\images\pic2.jpg" />
+    <Content Include="Content\images\pic3.jpg" />
+    <Content Include="Content\images\pic4.jpg" />
+    <Content Include="Content\images\pic5.jpg" />
+    <Content Include="Content\images\pic6.jpg" />
+    <Content Include="Content\images\search.png" />
+    <Content Include="Content\images\set.png" />
+    <Content Include="Content\images\star.png" />
+    <Content Include="Content\images\star1.png" />
+    <Content Include="Content\images\star2.png" />
+    <Content Include="Content\images\zoom.png" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\swipebox.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -192,6 +248,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\images\Thumbs.db" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -223,7 +280,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
