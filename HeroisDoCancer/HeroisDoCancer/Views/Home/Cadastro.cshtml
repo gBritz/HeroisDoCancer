@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Cadastro";
+}
+<form id="loginForm">
+    <fieldset id="body">
+        @Html.Label("Cadastre-se")
+         
+        <fieldset>
+            @Html.Label("Nome")
+            @Html.TextBox("")
+        </fieldset>
+
+        <fieldset>
+            @Html.Label("E-mail")
+            @Html.TextBox("")
+        </fieldset>
+
+        <fieldset>
+            @Html.Label("Senha")
+            @Html.TextBox("")
+        </fieldset>
+
+        <fieldset>
+            @Html.Label("Confirmar senha")
+            @Html.TextBox("")
+        </fieldset>
+
+        <input type="submit" id="login" value="Cadastrar">
+
+    </fieldset>
+</form>

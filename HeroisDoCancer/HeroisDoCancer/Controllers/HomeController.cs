@@ -14,7 +14,6 @@ namespace HeroisDoCancer.Controllers
         public ActionResult Index()
         {
             return View();
-        }
-
+        }        
     }
 }
