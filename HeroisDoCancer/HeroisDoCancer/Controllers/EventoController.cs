@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeroisDoCancer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,7 @@ namespace HeroisDoCancer.Controllers
 
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -101,5 +103,6 @@ namespace HeroisDoCancer.Controllers
                 return View();
             }
         }
+
     }
 }
