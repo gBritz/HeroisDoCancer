@@ -59,3 +59,12 @@ textarea {
 .validation-summary-valid {
     display: none;
 }
+
+
+.noticia{
+    background: none repeat scroll 0 0 #fff;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 2em 1em 1em;
+    text-align: left;
+}
