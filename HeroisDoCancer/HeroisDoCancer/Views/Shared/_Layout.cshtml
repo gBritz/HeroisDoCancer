@@ -17,11 +17,11 @@
             <div class="menu">
                 <a class="toggleMenu" href="#"><img src="~/Content/images/nav.png" alt="" /></a>
                 <ul class="nav" id="nav">
-                    <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Seja um Voluntário", "Index", "SejaVoluntario")</li>
-                    <li>@Html.ActionLink("Eventos", "Index", "Evento")</li>
-                    <li>@Html.ActionLink("Fotos", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Index", "Home")</li>
+                    <li id="menuHome" class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li id="menuSejaVoluntario">@Html.ActionLink("Seja um Voluntário", "Index", "SejaVoluntario")</li>
+                    <li id="menuEventos">@Html.ActionLink("Eventos", "Index", "Evento")</li>
+                    <li id="menuFotos">@Html.ActionLink("Fotos", "Index", "Home")</li>
+                    <li id="menuContato">@Html.ActionLink("Contato", "Index", "Home")</li>
                     <div class="clearfix"></div>
                 </ul>
             </div>
@@ -106,11 +106,7 @@
     @Scripts.Render("~/bundles/jquerymin")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/outhers")
-    
-
     @RenderSection("scripts", required: false)
-
-    <script src="~/Scripts/bootstrap.min.js"></script>    
 </body>
 </html>
 

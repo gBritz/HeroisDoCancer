@@ -128,12 +128,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="ContextoDados\DadosEmMemoria.cs" />
+    <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\GaleriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\VoluntarioController.cs" />
     <Compile Include="Controllers\SejaVoluntarioController.cs" />
+    <Compile Include="Controllers\VoluntarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -147,6 +147,8 @@
     <Compile Include="Services\Exceptions\CamposInvalidosException.cs" />
     <Compile Include="Services\VoluntarioService.cs" />
     <Compile Include="ViewModels\RespostaOperacaoViewModel.cs" />
+    <Compile Include="WebUtils\ContextoEmMemoria.cs" />
+    <Compile Include="WebUtils\SessionWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate.css" />
@@ -269,11 +271,11 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\images\Thumbs.db" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\images\Thumbs.db" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\classie.js" />
@@ -310,9 +312,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Evento\Index.cshtml" />
     <Content Include="Views\Home\_Login.cshtml" />
     <Content Include="Views\SejaVoluntario\Index.cshtml" />
-    <Content Include="Views\Evento\Index.cshtml" />
+    <Content Include="Views\Voluntario\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

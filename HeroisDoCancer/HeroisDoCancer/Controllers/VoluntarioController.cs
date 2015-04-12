@@ -13,8 +13,14 @@ namespace HeroisDoCancer.Controllers
 
         public VoluntarioController()
         {
-            var contexto = new DadosEmMemoria();
+            var contexto = new ContextoEmMemoria();
             this.service = new VoluntarioService(contexto);
+        }
+
+        [HttpGet]
+        public ActionResult Cadastro()
+        {
+            return View("Index");
         }
 
         [HttpPost]

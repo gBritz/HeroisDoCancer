@@ -1,30 +1,75 @@
-﻿<div class="col-sm-4 header_right">
-    <div id="loginContainer">
-        <a href="#" id="loginButton"><img src="~/Content/images/login.png"><span>Login</span></a>
+﻿@using HeroisDoCancer.Models;
+@using HeroisDoCancer.WebUtils;
+
+@model Voluntario
+
+@{
+    var isAuthenticated = User.Identity.IsAuthenticated;
+    var sDisplayNone = " style=display:none ";
+    var session = new SessionWrapper(new HttpSessionStateWrapper(System.Web.HttpContext.Current.Session));
+}
+
+<div class="col-sm-4 header_right">
+    <div id="loginContainer" class="login" @(isAuthenticated ? sDisplayNone : String.Empty)>
+        <a href="#" id="loginButton">
+            <img src="~/Content/images/login.png"><span>Login</span>
+        </a>
         <div id="loginBox">
-            <form id="loginForm">
-
+            @using (Ajax.BeginForm("Login", "Home", null, new AjaxOptions { HttpMethod = "POST", OnComplete = "logarCompleto" }, new { @id = "loginForm" }))
+            {
                 <fieldset id="body">
-
                     <fieldset>
-                        @Html.Label("E-mail")
-                        @Html.TextBox("teste", null)
+                        @Html.Label("Login")
+                        @Html.TextBoxFor(v => v.Login)
+                        @Html.ValidationMessageFor(v => v.Login)
                     </fieldset>
 
                     <fieldset>
                         @Html.Label("Senha")
-                        @Html.TextBox("te1ste", null)
+                        @Html.PasswordFor(v => v.Senha)
+                        @Html.ValidationMessageFor(v => v.Senha)
                     </fieldset>
 
-                    <input type="submit" id="login" value="Sign in">
-                    <label for="checkbox"><input type="checkbox" id="checkbox"> <i>Lembrar senha</i></label>
-
+                    <input type="submit" id="login" value="Sign in" />
+                    <label for="checkbox">
+                        <input type="checkbox" id="checkbox" /> <i>Lembrar senha</i>
+                    </label>
                 </fieldset>
 
                 <span><a href="#">Esqueceu sua senha?</a></span>
-
-            </form>
+            }
         </div>
+    </div>
+    <div id="dados-usuario" class="loginLogado" @(isAuthenticated ? String.Empty : sDisplayNone)>
+        <img src="@(isAuthenticated ? session.Voluntario.Foto : String.Empty)" class="img-circle" />
+
+        <span class="nome">@(isAuthenticated ? session.Voluntario.Nome : String.Empty)</span>
+
+        @Ajax.ActionLink("Sair", "Logout", "Home", null, new AjaxOptions { HttpMethod = "POST", OnComplete = "sairCompleto" }, new { @class = "sair" })
     </div>
     <div class="clearfix"></div>
 </div>
+
+<script type="text/javascript">
+    function logarCompleto(htx, operacao) {
+        console.log("logarCompleto %o", arguments);
+        var res = JSON.parse(htx.responseText);
+        if (res.Erro) {
+            alet(res.Mensagem);
+            return;
+        }
+
+        var dadosUsuario = $("#dados-usuario");
+        dadosUsuario.find('img').attr("src", res.Data.Foto);
+        dadosUsuario.find('.nome').text(res.Data.NomeUsuario);
+
+        $("#loginContainer").hide();
+        dadosUsuario.show();
+    }
+
+    function sairCompleto(htx, operacao) {
+        console.log("sairCompleto %o", arguments);
+        $("#loginContainer").show();
+        $("#dados-usuario").hide();
+    }
+</script>
