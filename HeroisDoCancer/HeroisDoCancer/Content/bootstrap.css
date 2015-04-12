@@ -5822,3 +5822,7 @@ button .title {
 a:hover {
   text-decoration: none;
 }
+
+.timeline-badge:hover {
+    cursor:pointer;
+}
