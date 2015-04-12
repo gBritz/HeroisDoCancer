@@ -128,7 +128,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="ContextoDados\DadosEmMemoria.cs" />
+    <Compile Include="WebUtils\ContextoEmMemoria.cs" />
+    <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\EventoController.cs" />
     <Compile Include="Controllers\GaleriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Services\Exceptions\CamposInvalidosException.cs" />
     <Compile Include="Services\VoluntarioService.cs" />
     <Compile Include="ViewModels\RespostaOperacaoViewModel.cs" />
+    <Compile Include="WebUtils\SessionWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate.css" />
@@ -317,6 +319,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ContextoDados\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

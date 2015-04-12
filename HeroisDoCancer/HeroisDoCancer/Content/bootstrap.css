@@ -2018,7 +2018,7 @@ select[multiple].input-lg {
 }
 .btn:hover,
 .btn:focus {
-  color: #333;
+
   text-decoration: none;
 }
 .btn:active,
@@ -2081,9 +2081,10 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #1B242F;
+  background-color: #357ebd;
   border-color: #357ebd;
 }
+
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
@@ -2204,8 +2205,8 @@ fieldset[disabled] .btn-info.active {
 }
 .btn-warning {
   color: #fff;
-  background-color: #f0ad4e;
-  border-color: #eea236;
+  background-color: #c9302c;
+  border-color: #c9302c;
 }
 .btn-warning:hover,
 .btn-warning:focus,
@@ -3045,6 +3046,9 @@ input[type="button"].btn-block {
   line-height: 1.42857143;
   color: #333;
   white-space: nowrap;
+}
+.spacer {
+    margin-top: 20px; /* define margin as you see fit */
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
@@ -4336,7 +4340,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  background-color: #999;
+  background-color: #B22222;
   border-radius: 10px;
 }
 .badge:empty {
@@ -5783,3 +5787,28 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+button {
+    border: none;
+    cursor: pointer;
+    height: 32px;       /* altura c/ base na imagem do AP */
+    position: relative;
+    /*width: 40px        /* largura c/ base na imagem do AP*/*/
+}
+
+button span {
+    color: #fff;
+    position: absolute;
+    line-height: 32px !important; /*obs: sobrepondo a regra de line-height do 'font-awesome'*/
+    top:0; bottom: 0
+}
+
+button .icon {
+    background: #0A62C4;
+    font-size: 1.1em;
+    left: 0; width: 40px
+}
+
+button .title {
+    background: #0971E4;
+    right: 0; width: 100px
+}
