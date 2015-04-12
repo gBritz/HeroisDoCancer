@@ -171,7 +171,7 @@ namespace HeroisDoCancer.ContextoDados
                     NroMaximoParticipantes = 4,
                     NroParticipantesRestantes = 4,
                     CriadoEm = new DateTime(2015, 04, 12, 01, 00, 00),
-                    Descricao = "Venha participar da festa de aniversário, que acontecerá neste dia 12 de abril.",
+                    Descricao = "Venha participar desta festa de aniversário.",
                     IdHospital = 1,
                     Hospital = hospitais[0],
                     TipoSituacao = TipoSituacaoEnum.Confirmado,
