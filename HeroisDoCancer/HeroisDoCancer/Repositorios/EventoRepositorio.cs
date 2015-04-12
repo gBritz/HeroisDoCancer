@@ -1,8 +1,6 @@
 ﻿using HeroisDoCancer.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace HeroisDoCancer.Repositorios
 {
@@ -16,6 +14,12 @@ namespace HeroisDoCancer.Repositorios
                 throw new ArgumentNullException("contexto");
 
             this.contexto = contexto;
+        }
+
+        public Evento GetById(Int32 id)
+        {
+            return this.contexto.Eventos
+                .SingleOrDefault(e => e.Id == id);
         }
 
         public Evento[] ObterTodosConfirmados()
