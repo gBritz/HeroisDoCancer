@@ -14,252 +14,10 @@
 <div class="living_middle" style="padding: 1em 0;">
     <div class="container">
 
-        <!-- Large modal Criar -->
-        <div class="modal fade cadastro-evento-modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Crie seu evento</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            @Html.Label("Titulo do evento")
-                                            @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento" })
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        @Html.Label("Hospital")
-                                        <select class="form-control">
-                                            <option>Hospital de Clínicas de Porto Alegre</option>
-                                            <option>Hospital São Lucas da PUCRS</option>
-                                            <option>Hospital Fêmina S/A</option>
-                                            <option>Hospital da Santa Casa</option>
-                                            <option>Hospital Nossa Senhora da Conceição</option>
-                                            <option>Hospital Independência</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            @Html.Label("Data")
-                                            @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento" })
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            @Html.Label("Rua")
-                                            @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento" })
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            @Html.Label("CEP")
-                                            @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento" })
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            @Html.Label("Número")
-                                            @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento" })
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                @Html.Label("Descrição do evento")
-                                                @Html.TextArea("descricao", null, new { @class = "form-control", @id = "descricaoEvento" })
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                @Html.Label("Quantidade máxima de pessoas")
-                                                @Html.TextBox("email", null, new { @class = "form-control", @id = "nomeCriadorEvento", @style = "width:10%" })
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Criar</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        <!-- End large modal -->
-        <!-- Large modal Vizualizar-->
-        <div class="modal fade visualizar-evento-modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Visualize seu evento</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            @Html.Label("Titulo do evento")
-                                            @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento", @readonly = "readonly" })
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        @Html.Label("Hospital")
-                                        <select class="form-control" disabled>
-                                            <option>Hospital de Clínicas de Porto Alegre</option>
-                                            <option>Hospital São Lucas da PUCRS</option>
-                                            <option>Hospital Fêmina S/A</option>
-                                            <option>Hospital da Santa Casa</option>
-                                            <option>Hospital Nossa Senhora da Conceição</option>
-                                            <option>Hospital Independência</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            @Html.Label("Data")
-                                            @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento", @readonly = "readonly" })
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            @Html.Label("Rua")
-                                            @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento", @readonly = "readonly" })
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            @Html.Label("CEP")
-                                            @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento", @readonly = "readonly" })
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            @Html.Label("Número")
-                                            @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento", @readonly = "readonly" })
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                @Html.Label("Descrição do evento")
-                                                @Html.TextArea("descricao", null, new { @class = "form-control", @id = "descricaoEvento", @readonly = "readonly" })
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                @Html.Label("Quantidade máxima de pessoas")
-                                                @Html.TextBox("email", null, new { @class = "form-control", @id = "nomeCriadorEvento", @style = "width:10%", @readonly = "readonly" })
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                @Html.Label("Participantes: ")
-                                                <img src="https://avatars3.githubusercontent.com/u/4161527?v=3&s=40" style="  width: 50px; height: 50px;" title="Guilherme" class="img-circle" />
-                                                <img src="http://lorempixel.com/50/50/people/7" title="Guilherme" class="img-circle" />
-                                                <img src="http://lorempixel.com/50/50/people/9" title="Guilherme" class="img-circle" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="form-group">
+        @*MODAIS*@
+        @Html.Partial("_CriarEvento")
+        @Html.Partial("_VisualizarEvento")
 
-                                                <link href="~/Content/comentarios_modal.css" rel="stylesheet" />
-                                                <div class="detailBox">
-                                                    <div class="titleBox">
-                                                        @Html.Label("COMENTÁRIOS")
-                                                    </div>
-                                                    <div class="actionBox">
-                                                        <ul class="commentList">
-                                                            <li>
-                                                                <div class="commenterImage">
-                                                                    <img src="http://lorempixel.com/50/50/people/6" />
-                                                                </div>
-                                                                <div class="commentText">
-                                                                    <p class="">Olá, eu posso ir?.</p> <span class="date sub-text">11 de Abril, 2015</span>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="commenterImage">
-                                                                    <img src="http://lorempixel.com/50/50/people/7" />
-                                                                </div>
-                                                                <div class="commentText">
-                                                                    <p class="">Oi, infelizmente não. Para participar de uma ação voluntária, você deve ser maior de idade.</p> <span class="date sub-text">11 de Abril, 2015</span>
-                                                                </div>
-                                                            </li>
-                                                            <li>
-                                                                <div class="commenterImage">
-                                                                    <img src="http://lorempixel.com/50/50/people/9" />
-                                                                </div>
-                                                                <div class="commentText">
-                                                                    <p class="">Vai estar muito bom!</p> <span class="date sub-text">12 de Abril, 2015</span>
-
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="spacer"></div>
-                                                        <div class="form-group">
-                                                            @Html.TextArea("descricaoComentario", null, new { @class = "form-control", @id = "descricaoComentario" })
-                                                            <div class="spacer" style=" margin-top: 7px;"></div>
-                                                            <button class="btn btn-default" style="float:right;width:20%">Adicionar</button>
-                                                        </div>
-                                                        <div class="form-group">
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-            </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        <!-- End large modal -->
         @*MENSAGEM DE SUCESSO, AO PARTICIPAR DE UM EVENTO*@
         <div class="alert alert-success" id="alertSucessoParticipar" style="display:none">
             Você foi incluido no evento com sucesso.
@@ -268,89 +26,52 @@
         <div class="page-header">
             <h1 id="timeline" style="text-align:center">EVENTOS - ABRIL/2015</h1>
         </div>
-        <div class="content_top" style="background: #f3f1f2">
-            <div class="container">
 
-                <div class="col-md-4 bottom_nav">
-                    <div class="content_menu">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".cadastro-evento-modal" style="background: #32CD32">Criar evento</button>
-                    </div>
-                </div>
-
-                <div class="col-md-4 bottom_nav">
-                    <div class="content_menu">
-                        <ul>
-                            <li><a href="#">MEUS EVENTOS</a></li>
-                            <li class="active"><a href="#">GERAL</a></li>
-                            <li><a href="#">EVENTOS INATIVOS</a></li>
-                        </ul>
-                    </div>
-                </div>
-                @*<div class="col-md-4 content_dropdown1">
-                        <div class="content_dropdown">
-                            <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"metro"}'>
-                                <option value="0">Dubai</option>
-                                <option value="1">tempor</option>
-                                <option value="2">congue</option>
-                                <option value="3">mazim </option>
-                                <option value="4">mutationem</option>
-                                <option value="5">hendrerit </option>
-                                <option value="5"></option>
-                                <option value="5"></option>
-                            </select>
-                        </div>
-                        <div class="content_dropdown">
-                            <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"metro"}'>
-                                <option value="0">Show Map</option>
-                                <option value="1">tempor</option>
-                                <option value="2">congue</option>
-                                <option value="3">mazim </option>
-                                <option value="4">mutationem</option>
-                                <option value="5">hendrerit </option>
-                                <option value="5"></option>
-                                <option value="5"></option>
-                            </select>
-                        </div>
-                    </div>*@
-            </div>
-        </div>
-        <ul class="timeline">
+        @*FILTRO*@
+        @Html.Partial("_FiltroEvento")
+        
+        
+        <ul class="timeline" data-toggle="modal" data-target=".visualizar-evento-modal">
             <li>
                 <div class="timeline-badge"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel">
+                <div class="timeline-panel wow fadeInLeft animated" style="visibility: visible; -webkit-animation-delay: 0.5s;">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">Festa de aniversário</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>12/04/2015</small></p>
                         <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
                         <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
                     </div>
+                    <div class="timeline-body">
+                        <p>Venha participar da festa de aniversário, que acontecerá neste dia 12 de abril.</p>
                     </div>
-                    
-                    <button class="btn btn-social-icon btn-facebook">
-                        <i class="fa fa-facebook">
-                        </i>
-                    </button>
-                    <button class="btn btn-social-icon btn-twitter">
-                        <i class="fa fa-twitter">
-                        </i>
-                    </button>
-                    <button class="btn btn-social-icon btn-google-plus">
-                        <i class="fa fa-google-plus">
-                        </i>
-                    </button>
+                    <div class="buttons_eventos">
+                        <div class="spacer"></div>
+
+                        <button class="btn btn-social-icon btn-facebook">
+                            <i class="fa fa-facebook">
+                            </i>
+                        </button>
+                        <button class="btn btn-social-icon btn-twitter">
+                            <i class="fa fa-twitter">
+                            </i>
+                        </button>
+                        <button class="btn btn-social-icon btn-google-plus">
+                            <i class="fa fa-google-plus">
+                            </i>
+                        </button>
                         <button class="btn btn-primary" style="width: 105px; height: 34px; padding: 0; text-align: left; float: right;">
                             <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
                             <span class="">Participar</span>
-                    </button>
-                       
-                </div>
+                        </button>
+                    </div>
                 </div>
             </li>
+
             <li class="timeline-inverted">
                 <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel">
+                <div class="timeline-panel wow fadeInRight animated" style="visibility: visible; -webkit-animation-delay: 0.5s;">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">Leitura em grupo</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>11/04/2015</small></p>
-                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
+                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">6</span></small></p>
                         <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
                     </div>
                     <div class="timeline-body">
@@ -378,15 +99,15 @@
                             <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
                             <span class="">Participar</span>
                         </button>
-                </div>
+                    </div>
                 </div>
             </li>
             <li>
                 <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel">
+                <div class="timeline-panel wow fadeInLeft animated" style="visibility: visible; -webkit-animation-delay: 0.5s;">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">Dia do Herói</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>10/04/2015</small></p>
-                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
+                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">10</span></small></p>
                         <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
                     </div>
                     <div class="timeline-body">

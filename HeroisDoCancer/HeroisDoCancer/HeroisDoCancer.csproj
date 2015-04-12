@@ -314,6 +314,10 @@
     <Content Include="Views\Voluntario\Index.cshtml" />
     <Content Include="Views\Galeria\Index.cshtml" />
     <Content Include="Views\Evento\_Item.cshtml" />
+    <Content Include="Views\Evento\_CriarEvento.cshtml" />
+    <Content Include="Views\Evento\_VisualizarEvento.cshtml" />
+    <Content Include="Views\Evento\_FiltroEvento.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

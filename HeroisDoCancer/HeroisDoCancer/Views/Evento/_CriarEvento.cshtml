@@ -1,0 +1,91 @@
+﻿<!-- Large modal Criar -->
+<div class="modal fade cadastro-evento-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Crie seu evento</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.Label("Titulo do evento")
+                                    @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                @Html.Label("Hospital")
+                                <select class="form-control">
+                                    <option>Hospital de Clínicas de Porto Alegre</option>
+                                    <option>Hospital São Lucas da PUCRS</option>
+                                    <option>Hospital Fêmina S/A</option>
+                                    <option>Hospital da Santa Casa</option>
+                                    <option>Hospital Nossa Senhora da Conceição</option>
+                                    <option>Hospital Independência</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.Label("Data")
+                                    @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.Label("Rua")
+                                    @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.Label("CEP")
+                                    @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.Label("Número")
+                                    @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        @Html.Label("Descrição do evento")
+                                        @Html.TextArea("descricao", null, new { @class = "form-control", @id = "descricaoEvento" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        @Html.Label("Quantidade máxima de pessoas")
+                                        @Html.TextBox("email", null, new { @class = "form-control", @id = "nomeCriadorEvento", @style = "width:10%" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Criar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End large modal -->
