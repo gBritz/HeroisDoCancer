@@ -145,6 +145,7 @@
     <Compile Include="Models\Voluntario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\EventoRepositorio.cs" />
+    <Compile Include="Repositorios\HospitalRepositorio.cs" />
     <Compile Include="Services\Exceptions\CamposInvalidosException.cs" />
     <Compile Include="Services\VoluntarioService.cs" />
     <Compile Include="ViewModels\ItemEventoViewModel.cs" />
@@ -316,6 +317,7 @@
     <Content Include="Views\Evento\_VisualizarEvento.cshtml" />
     <Content Include="Views\Evento\_FiltroEvento.cshtml" />
     <Content Include="Views\Galeria\Index.cshtml" />
+    <Content Include="Views\Contato\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

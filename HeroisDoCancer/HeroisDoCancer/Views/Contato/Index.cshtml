@@ -1,0 +1,38 @@
+﻿@model IEnumerable<HeroisDoCancer.Models.Hospital>
+
+<div class="living_middle">
+    <div class="container">
+        <div class="col-md-12 wow fadeInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+
+            <h2>Contatos dos Hospitais</h2>
+
+            @foreach (HeroisDoCancer.Models.Hospital hospital in Model)
+            {
+                <ul class="feature">
+                    <li> <i class="icon-heart"></i></li>
+                    <li class="feature_right">
+                        <h4>@hospital.Nome</h4>
+                        <p>@hospital.Endereco, Porto Alegre-RS</p>
+                        <p><a href="@hospital.Site">@hospital.Site</a></p>
+                        <p>@hospital.Telefone</p>
+                    </li>
+                    <div class="clearfix"></div>
+                </ul>
+
+
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    setTimeout(function () {
+
+        $("#menuHome").removeClass("active");
+        $("#menuSejaVoluntario").removeClass("active");
+        $("#menuEventos").removeClass("active");
+        $("#menuFotos").removeClass("active");
+        $("#menuContato").removeClass("active");
+
+        $("#menuContato").addClass("active");
+    }, 200);
+</script>
