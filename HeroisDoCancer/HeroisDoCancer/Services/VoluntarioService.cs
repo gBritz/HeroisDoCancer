@@ -34,6 +34,31 @@ namespace HeroisDoCancer.Services
             this.contexto.Publica();
         }
 
+        public Boolean PodeParticipar(Voluntario voluntario, Evento evento)
+        {
+            if (voluntario == null)
+                throw new ArgumentNullException("voluntario");
+
+            if (evento == null)
+                throw new ArgumentNullException("evento");
+
+            var result = true;
+
+            if (ExisteParticipanteNo(voluntario, evento))
+                result = false;
+
+            else if (evento.NroParticipantesRestantes == evento.NroMaximoParticipantes)
+                result = false;
+
+            return result;
+        }
+
+        public Boolean ExisteParticipanteNo(Voluntario participante, Evento evento)
+        {
+            return this.contexto.Eventos
+                .Any(ev => ev.Id == evento.Id && ev.Participantes.Any(p => p.Id == participante.Id));
+        }
+
         public virtual Boolean ExistePeloNome(Voluntario voluntario)
         {
             return this.contexto.Voluntarios.Any(v => v.Nome.Equals(voluntario.Nome, StringComparison.InvariantCultureIgnoreCase));
