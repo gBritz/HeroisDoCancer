@@ -230,16 +230,19 @@ body a{
 	z-index: 90;
 }
 /********** Login *************/
-#loginContainer {
+.login {
     position:relative;
     background:#e94e38;
     padding:1.5em 2em;
 }
-#loginContainer a span{
+.login a span{
    padding:0px 0px 0 5px;
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 0.85em;
+}
+.login .sair {
+    float: right;
 }
 /* Login Button */
 #loginButton { 
@@ -2017,7 +2020,7 @@ p.educate {
 .footer input[type="text"] {
 	width: 77%;
 }
-#loginContainer {
+.login {
 	width:85%;
 	float: right;
 }
@@ -2148,7 +2151,7 @@ span.four {
 .grid_box .zoom-icon {
 	height: 160px;
 }
-#loginContainer {
+.login {
 	width: 65%;
 }
 .sb-search {
@@ -2160,7 +2163,7 @@ span.four {
 .header-left {
 	width: 77.666667%;
 }
-#loginContainer {
+.login {
 	padding: 1.5em 1em;
 }
 .sb-icon-search, .sb-search-submit {
@@ -2180,7 +2183,7 @@ span.one, span.two, span.three, span.four{
 }
 }
 @media (max-width:800px){
-#loginContainer {
+.login {
 	width: 94%;
 }
 .footer span {
@@ -2405,10 +2408,10 @@ h2.title.block-title {
 .sb-search {
 	right: 0;
 }
-#loginContainer {
+.login {
 	width: 100%;
 }
-#loginContainer {
+.login {
 	padding: 0.5em 1em;
 }
 #loginBox {
@@ -2508,7 +2511,7 @@ ul.filter li a i.icon3 {
 .search-box {
 	display: none;
 }
-#loginContainer {
+.login {
 	display: none;
 }
 .nav {
