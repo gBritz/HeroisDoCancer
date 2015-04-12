@@ -1,6 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using HeroisDoCancer.ContextoDados;
+using HeroisDoCancer.Repositorios;
+using HeroisDoCancer.Services;
+using HeroisDoCancer.ViewModels;
+using HeroisDoCancer.WebUtils;
+using System;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,33 +12,83 @@ namespace HeroisDoCancer.Controllers
 {
     public class EventoController : Controller
     {
-        //
-        // GET: /Evento/
+        private EventoRepositorio eventoRepo;
+        private VoluntarioService voluntarioSer;
+        private SessionWrapper session;
 
-        public ActionResult Index()
+        public EventoController()
         {
-            return View();
+            var contexto = new ContextoEmMemoria();
+
+            this.eventoRepo = new EventoRepositorio(contexto);
+            this.voluntarioSer = new VoluntarioService(contexto);
+            this.session = new SessionWrapper(new HttpSessionStateWrapper(System.Web.HttpContext.Current.Session));
         }
 
-        //
-        // GET: /Evento/Details/5
+        [HttpGet]
+        public ActionResult Index()
+        {
+            var eventos = this.eventoRepo.ObterTodosConfirmados();
+            var vm = new PesquisaEventoViewModel
+            {
+                Eventos = eventos,
+                CriarInstancia = evento => new ItemEventoViewModel 
+                {
+                    Evento = evento,
+                    UsuarioLogadoPodeParticipar = () => 
+                    {
+                        var voluntarion = this.session.Voluntario;
+                        return voluntarion != null && this.voluntarioSer.PodeParticipar(this.session.Voluntario, evento);
+                    }
+                }
+            };
 
+            return View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult Participar(Int32 idEvento)
+        {
+            if (idEvento <= 0)
+                throw new HttpException((Int32)HttpStatusCode.BadRequest, "Bad Request");
+
+            var result = new RespostaOperacaoViewModel();
+
+            var evento = this.eventoRepo.GetById(idEvento);
+
+            try
+            {
+                this.voluntarioSer.Participar(session.Voluntario, evento);
+
+                result.Data = new
+                {
+                    TotalParticipantesRestantes = evento.NroParticipantesRestantes,
+                    Situacao = evento.TipoSituacao
+                };
+            }
+            catch (Exception ex)
+            {
+                result.Erro = true;
+                result.Mensagem = ex.Message;
+            }
+
+            return Json(result);
+        }
+
+        [HttpGet]
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        //
-        // GET: /Evento/Create
-
+        [Authorize]
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
 
-        //
-        // POST: /Evento/Create
-
+        [Authorize]
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -50,18 +104,15 @@ namespace HeroisDoCancer.Controllers
             }
         }
 
-        //
-        // GET: /Evento/Edit/5
-
+        [Authorize]
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        //
-        // POST: /Evento/Edit/5
-
-        [HttpPost]
+        [Authorize]
+        [HttpPut]
         public ActionResult Edit(int id, FormCollection collection)
         {
             try
@@ -76,18 +127,15 @@ namespace HeroisDoCancer.Controllers
             }
         }
 
-        //
-        // GET: /Evento/Delete/5
-
+        [Authorize]
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        //
-        // POST: /Evento/Delete/5
-
-        [HttpPost]
+        [Authorize]
+        [HttpDelete]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try

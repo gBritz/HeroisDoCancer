@@ -144,8 +144,11 @@
     <Compile Include="Models\TipoSituacaoEnum.cs" />
     <Compile Include="Models\Voluntario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\EventoRepositorio.cs" />
     <Compile Include="Services\Exceptions\CamposInvalidosException.cs" />
     <Compile Include="Services\VoluntarioService.cs" />
+    <Compile Include="ViewModels\ItemEventoViewModel.cs" />
+    <Compile Include="ViewModels\PesquisaEventoViewModel.cs" />
     <Compile Include="ViewModels\RespostaOperacaoViewModel.cs" />
     <Compile Include="WebUtils\ContextoEmMemoria.cs" />
     <Compile Include="WebUtils\SessionWrapper.cs" />
@@ -154,6 +157,10 @@
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\buttonsocial.css" />
+    <Content Include="Content\comentarios_modal.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\images\abraco.jpg" />
     <Content Include="Content\images\area.png" />
@@ -161,9 +168,7 @@
     <Content Include="Content\images\banner.jpg" />
     <Content Include="Content\images\bed.png" />
     <Content Include="Content\images\drop.png" />
-    <Content Include="Content\images\e1.jpg" />
     <Content Include="Content\images\e2.jpg" />
-    <Content Include="Content\images\e3.jpg" />
     <Content Include="Content\images\e4.jpg" />
     <Content Include="Content\images\filter.png" />
     <Content Include="Content\images\footer.jpg" />
@@ -182,29 +187,15 @@
     <Content Include="Content\images\kc2.jpg" />
     <Content Include="Content\images\l1.jpg" />
     <Content Include="Content\images\l2.jpg" />
-    <Content Include="Content\images\l3.jpg" />
     <Content Include="Content\images\login.png" />
     <Content Include="Content\images\logo.png" />
-    <Content Include="Content\images\m1.jpg" />
-    <Content Include="Content\images\m2.jpg" />
     <Content Include="Content\images\mail.png" />
     <Content Include="Content\images\m_star.png" />
     <Content Include="Content\images\m_star1.png" />
     <Content Include="Content\images\nav.png" />
     <Content Include="Content\images\p1.jpg" />
-    <Content Include="Content\images\p2.jpg" />
-    <Content Include="Content\images\p3.jpg" />
-    <Content Include="Content\images\p4.jpg" />
-    <Content Include="Content\images\p5.jpg" />
-    <Content Include="Content\images\p6.jpg" />
-    <Content Include="Content\images\p7.jpg" />
-    <Content Include="Content\images\p8.jpg" />
     <Content Include="Content\images\pic1.jpg" />
-    <Content Include="Content\images\pic2.jpg" />
     <Content Include="Content\images\pic3.jpg" />
-    <Content Include="Content\images\pic4.jpg" />
-    <Content Include="Content\images\pic5.jpg" />
-    <Content Include="Content\images\pic6.jpg" />
     <Content Include="Content\images\search.png" />
     <Content Include="Content\images\set.png" />
     <Content Include="Content\images\sintoma2.jpg" />
@@ -320,6 +311,11 @@
     <Content Include="Views\SejaVoluntario\Index.cshtml" />
     <Content Include="Views\Voluntario\Index.cshtml" />
     <Content Include="Views\Galeria\Index.cshtml" />
+    <Content Include="Views\Evento\_Item.cshtml" />
+    <Content Include="Views\Evento\_CriarEvento.cshtml" />
+    <Content Include="Views\Evento\_VisualizarEvento.cshtml" />
+    <Content Include="Views\Evento\_FiltroEvento.cshtml" />
+    <Content Include="Views\Galeria\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -341,7 +337,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49867</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

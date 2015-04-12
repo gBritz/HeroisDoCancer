@@ -35,10 +35,11 @@
                     </label>
                 </fieldset>
 
-                <span><a href="#">Esqueceu sua senha?</a></span>
+                <span><a href="#">Esqueci minha Senha</a> | @Html.ActionLink("Quero me Cadastrar", "Cadastro", "Voluntario")</span>                 
             }
         </div>
     </div>
+
     <div id="dados-usuario" class="loginLogado" @(isAuthenticated ? String.Empty : sDisplayNone)>
         <img src="@(isAuthenticated ? Model.Foto : String.Empty)" class="img-circle" />
 
@@ -54,7 +55,7 @@
         console.log("logarCompleto %o", arguments);
         var res = JSON.parse(htx.responseText);
         if (res.Erro) {
-            alet(res.Mensagem);
+            alert(res.Mensagem);
             return;
         }
 
@@ -64,11 +65,17 @@
 
         $("#loginContainer").hide();
         dadosUsuario.show();
+
+        if (depoisUsuarioLogadoSucesso)
+            depoisUsuarioLogadoSucesso();
     }
 
     function sairCompleto(htx, operacao) {
         console.log("sairCompleto %o", arguments);
         $("#loginContainer").show();
         $("#dados-usuario").hide();
+
+        if (depoisUsuarioDeslogar)
+            depoisUsuarioDeslogar();
     }
 </script>

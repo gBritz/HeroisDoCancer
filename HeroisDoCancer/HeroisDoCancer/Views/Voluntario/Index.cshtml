@@ -1,51 +1,60 @@
-﻿@using HeroisDoCancer.Models;
+﻿@{
+    ViewBag.Title = "Heróis do câncer";
+}
+@using HeroisDoCancer.Models;
 
 @model Voluntario
 
-@{
-    ViewBag.Title = "Cadastro";
-}
+<div class="living_middle">
+    <div class="container">
+        <div class="col-md-12 wow fadeInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+            <h2>Cadastro de Voluntário</h2>
+            @using (Ajax.BeginForm("Cadastro", "Voluntario", null, new AjaxOptions { HttpMethod = "POST", OnComplete = "cadastroCompleto" }, new { @id = "voluntarioForm" }))
+            {
+                <fieldset id="body" style="width: 650px;">
+                    <fieldset>
+                        @Html.Label("Nome")
+                        @Html.TextBoxFor(v => v.Nome)
+                        @Html.ValidationMessageFor(v => v.Nome)
+                    </fieldset>
 
-@using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "POST", OnComplete = "cadastroCompleto" }))
-{
-    <fieldset id="body">
-        @Html.Label("Cadastre-se")
+                    <fieldset>
+                        @Html.Label("E-mail")
+                        @Html.TextBoxFor(v => v.Email)
+                        @Html.ValidationMessageFor(v => v.Email)
+                    </fieldset>
 
-        <fieldset>
-            @Html.Label("Nome")
-            @Html.TextBoxFor(v => v.Nome)
-            @Html.ValidationMessageFor(v => v.Nome)
-        </fieldset>
+                    <fieldset>
+                        @Html.Label("Senha")
+                        @Html.PasswordFor(v => v.Senha)
+                        @Html.ValidationMessageFor(v => v.Senha)
+                    </fieldset>
 
-        <fieldset>
-            @Html.Label("E-mail")
-            @Html.TextBoxFor(v => v.Email)
-            @Html.ValidationMessageFor(v => v.Email)
-        </fieldset>
+                    <fieldset>
+                        @Html.Label("Confirmar senha")
+                        @Html.PasswordFor(v => v.ConfirmacaoSenha)
+                        @Html.ValidationMessageFor(v => v.ConfirmacaoSenha)
+                    </fieldset>
+                    <br/>
+                    <fieldset>
 
-        <fieldset>
-            @Html.Label("Senha")
-            @Html.TextBoxFor(v => v.Senha)
-            @Html.ValidationMessageFor(v => v.Senha)
-        </fieldset>
-
-        <fieldset>
-            @Html.Label("Confirmar senha")
-            @Html.TextBoxFor(v => v.ConfirmacaoSenha)
-            @Html.ValidationMessageFor(v => v.ConfirmacaoSenha)
-        </fieldset>
-
-        <input type="submit" value="Cadastrar" />
-    </fieldset>
-}
+                        <button type="submit" class="btn btn-success" style="width: 105px; height: 34px; padding: 0; text-align: left;">
+                            <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
+                            <span class="">Cadastrar</span>
+                        </button>
+                    </fieldset>
+                </fieldset>
+            }
+        </div>
+    </div>
+</div>
 
 @section scripts
 {
     <script type="text/javascript">
         function cadastroCompleto(hrx, operation) {
             var res = JSON.parse(hrx.responseText);
-            if (!res.Erro)
-            {
+            if (!res.Erro) {
                 $("form#form0 :text").val("");
                 window.location = "@(Url.Action("Index", "Evento"))";
             }

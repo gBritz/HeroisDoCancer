@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 
 namespace HeroisDoCancer.Models
 {
     public interface IContextoDados
     {
-        ICollection<Voluntario> Voluntarios { get; }
+        IQueryable<Voluntario> Voluntarios { get; }
+
+        IQueryable<Evento> Eventos { get; }
 
         void Adiciona<TModel>(TModel model) where TModel : class;
 

@@ -1,0 +1,155 @@
+﻿ <!-- Large modal Vizualizar-->
+<div class="modal fade visualizar-evento-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Visualize seu evento</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.Label("Titulo do evento")
+                                    @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                @Html.Label("Hospital")
+                                <select class="form-control" disabled>
+                                    <option>Hospital de Clínicas de Porto Alegre</option>
+                                    <option>Hospital São Lucas da PUCRS</option>
+                                    <option>Hospital Fêmina S/A</option>
+                                    <option>Hospital da Santa Casa</option>
+                                    <option>Hospital Nossa Senhora da Conceição</option>
+                                    <option>Hospital Independência</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.Label("Data")
+                                    @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    @Html.Label("Rua")
+                                    @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.Label("CEP")
+                                    @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento", @readonly = "readonly" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.Label("Número")
+                                    @Html.TextBox("tituloEvento", null, new { @class = "form-control", @id = "tituloEvento", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        @Html.Label("Descrição do evento")
+                                        @Html.TextArea("descricao", null, new { @class = "form-control", @id = "descricaoEvento", @readonly = "readonly" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        @Html.Label("Quantidade máxima de pessoas")
+                                        @Html.TextBox("email", null, new { @class = "form-control", @id = "nomeCriadorEvento", @style = "width:10%", @readonly = "readonly" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        @Html.Label("Participantes: ")
+                                        <img src="https://avatars3.githubusercontent.com/u/4161527?v=3&s=40" style="  width: 50px; height: 50px;" title="Guilherme" class="img-circle" />
+                                        <img src="http://lorempixel.com/50/50/people/7" title="Guilherme" class="img-circle" />
+                                        <img src="http://lorempixel.com/50/50/people/9" title="Guilherme" class="img-circle" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-group">
+
+                                        <link href="~/Content/comentarios_modal.css" rel="stylesheet" />
+                                        <div class="detailBox">
+                                            <div class="titleBox">
+                                                @Html.Label("COMENTÁRIOS")
+                                            </div>
+                                            <div class="actionBox">
+                                                <ul class="commentList">
+                                                    <li>
+                                                        <div class="commenterImage">
+                                                            <img src="http://lorempixel.com/50/50/people/6" />
+                                                        </div>
+                                                        <div class="commentText">
+                                                            <p class="">Olá, eu posso ir?.</p> <span class="date sub-text">11 de Abril, 2015</span>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="commenterImage">
+                                                            <img src="http://lorempixel.com/50/50/people/7" />
+                                                        </div>
+                                                        <div class="commentText">
+                                                            <p class="">Oi, infelizmente não. Para participar de uma ação voluntária, você deve ser maior de idade.</p> <span class="date sub-text">11 de Abril, 2015</span>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="commenterImage">
+                                                            <img src="http://lorempixel.com/50/50/people/9" />
+                                                        </div>
+                                                        <div class="commentText">
+                                                            <p class="">Vai estar muito bom!</p> <span class="date sub-text">12 de Abril, 2015</span>
+
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="spacer"></div>
+                                                <div class="form-group">
+                                                    @Html.TextArea("descricaoComentario", null, new { @class = "form-control", @id = "descricaoComentario" })
+                                                    <div class="spacer" style=" margin-top: 7px;"></div>
+                                                    <button class="btn btn-default" style="float:right;width:20%">Adicionar</button>
+                                                </div>
+                                                <div class="form-group">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End large modal -->

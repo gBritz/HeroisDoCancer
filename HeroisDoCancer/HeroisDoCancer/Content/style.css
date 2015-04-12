@@ -2656,3 +2656,51 @@ label.btn1.btn2.btn-2.btn-2g {
 	width: 56%;
 }
 }
+
+
+
+/*Cadastro Voluntários*/
+#voluntarioForm:after {
+	content: '';
+	position: absolute;
+	right: 25px;
+	top: -10px;
+	border-left:10px solid rgba(0, 0, 0, 0);
+	border-right:10px solid rgba(0, 0, 0, 0);
+	border-bottom: 10px solid #f0f0f0;
+}
+/* voluntario Form */
+#voluntarioForm {
+	width: 90%;
+	background: #fff;
+	border: thin;
+    position: center;
+}
+#voluntarioForm fieldset {
+    /*margin:0 0 15px 0;
+    display:block;
+    border:0;
+    padding:0;*/
+}
+#voluntarioForm #checkbox {
+    width:auto;
+    margin:3px 6px 0 0;
+    float:left;
+    padding:0;
+    border:0;
+    *margin:-3px 9px 0 0; /* IE7 Fix */
+}
+#voluntarioForm #body fieldset label{
+    display:block;
+    float:none;
+    margin:0 0 6px 0;
+}	
+#voluntarioForm input {
+    width:92%;
+    border:1px solid #DADADA;
+	color: #222;
+	background:#FFF;
+    padding:6px;
+	font-size: 0.8125em;
+    -webkit-apperance:none;
+}

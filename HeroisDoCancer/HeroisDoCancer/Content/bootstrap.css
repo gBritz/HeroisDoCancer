@@ -5830,3 +5830,10 @@ button .title {
   border-left: 14px solid #fff;
   border-right: 0 solid #fff;
 }
+a:hover {
+  text-decoration: none;
+}
+
+.timeline-badge:hover {
+    cursor:pointer;
+}
