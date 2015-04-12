@@ -71,10 +71,11 @@ namespace HeroisDoCancer.ContextoDados
                 new Voluntario 
                 {
                     Id = 1,
+                    Login = "britz",
                     Nome = "Guilherme Britz Videira",
                     Email = "gbritzv@gmail.com",
                     Eventos = new List<Evento>(),
-                    Foto = String.Empty,
+                    Foto = "https://avatars3.githubusercontent.com/u/4161527?v=3&s=40",
                     Senha = "123456"
                 }            
             };
