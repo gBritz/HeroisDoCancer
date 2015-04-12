@@ -28,7 +28,7 @@
         <ul class="timeline">
             @foreach (var evento in Model.Eventos)
             {
-                @Html.Partial("_Item", evento)
+                @Html.Partial("_Item", Model.CriarInstancia(evento))
             }
         </ul>
     </div>
@@ -47,4 +47,12 @@
 
         $(".timeline > li:odd").addClass("timeline-inverted");
     }, 200);
+
+    function depoisUsuarioLogadoSucesso() {
+        window.location = window.location;
+    }
+
+    function depoisUsuarioDeslogar() {
+        window.location = window.location;
+    }
 </script>

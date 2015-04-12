@@ -64,11 +64,17 @@
 
         $("#loginContainer").hide();
         dadosUsuario.show();
+
+        if (depoisUsuarioLogadoSucesso)
+            depoisUsuarioLogadoSucesso();
     }
 
     function sairCompleto(htx, operacao) {
         console.log("sairCompleto %o", arguments);
         $("#loginContainer").show();
         $("#dados-usuario").hide();
+
+        if (depoisUsuarioDeslogar)
+            depoisUsuarioDeslogar();
     }
 </script>

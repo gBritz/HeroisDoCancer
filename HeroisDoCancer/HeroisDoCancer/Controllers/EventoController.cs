@@ -1,6 +1,9 @@
 ﻿using HeroisDoCancer.ContextoDados;
 using HeroisDoCancer.Repositorios;
+using HeroisDoCancer.Services;
 using HeroisDoCancer.ViewModels;
+using HeroisDoCancer.WebUtils;
+using System.Web;
 using System.Web.Mvc;
 
 namespace HeroisDoCancer.Controllers
@@ -8,19 +11,34 @@ namespace HeroisDoCancer.Controllers
     public class EventoController : Controller
     {
         private EventoRepositorio eventoRepo;
+        private VoluntarioService voluntarioSer;
+        private SessionWrapper session;
 
         public EventoController()
         {
-            this.eventoRepo = new EventoRepositorio(new ContextoEmMemoria());
+            var contexto = new ContextoEmMemoria();
+
+            this.eventoRepo = new EventoRepositorio(contexto);
+            this.voluntarioSer = new VoluntarioService(contexto);
+            this.session = new SessionWrapper(new HttpSessionStateWrapper(System.Web.HttpContext.Current.Session));
         }
 
         [HttpGet]
         public ActionResult Index()
         {
             var eventos = this.eventoRepo.ObterTodosConfirmados();
-            var vm = new PesquisaEventoViewModel 
+            var vm = new PesquisaEventoViewModel
             {
-                Eventos = eventos
+                Eventos = eventos,
+                CriarInstancia = evento => new ItemEventoViewModel 
+                {
+                    Evento = evento,
+                    UsuarioLogadoPodeParticipar = () => 
+                    {
+                        var voluntarion = this.session.Voluntario;
+                        return voluntarion != null && this.voluntarioSer.PodeParticipar(this.session.Voluntario, evento);
+                    }
+                }
             };
 
             return View(vm);

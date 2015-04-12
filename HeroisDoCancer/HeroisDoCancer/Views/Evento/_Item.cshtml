@@ -1,22 +1,23 @@
 ﻿@using HeroisDoCancer.Models;
+@using HeroisDoCancer.ViewModels;
 
-@model Evento
+@model ItemEventoViewModel
 
 <li>
     <div class="timeline-badge"><i class="glyphicon glyphicon-credit-card"></i></div>
     <div class="timeline-panel">
         <div class="timeline-heading">
-            <h4 class="timeline-title">@(Model.Nome)</h4>
+            <h4 class="timeline-title">@(Model.Evento.Nome)</h4>
             <p>
                 <small class="text-muted" style="float:right">
-                    <i class="glyphicon glyphicon-calendar"></i>@(Model.DataHora.ToString("dd/MM/yyyy hh:mm"))
+                    <i class="glyphicon glyphicon-calendar"></i>@(Model.Evento.DataHora.ToString("dd/MM/yyyy hh:mm"))
                 </small>
             </p>
-            <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">@(Model.NroParticipantesRestantes)</span></small></p>
+            <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">@(Model.Evento.NroParticipantesRestantes)</span></small></p>
             <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
         </div>
         <div class="timeline-body">
-            <p>@(Model.Descricao)</p>
+            <p>@(Model.Evento.Descricao)</p>
         </div>
         <div class="buttons_eventos">
             <div class="spacer"></div>
@@ -33,10 +34,14 @@
                 <i class="fa fa-google-plus">
                 </i>
             </button>
-            <button class="btn btn-primary" style="width: 105px; height: 34px; padding: 0; text-align: left; float: right;">
-                <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
-                <span class="">Participar</span>
-            </button>
+
+            @if (Model.UsuarioLogadoPodeParticipar())
+            {
+                <button class="btn btn-primary" style="width: 105px; height: 34px; padding: 0; text-align: left; float: right;">
+                    <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
+                    <span class="">Participar</span>
+                </button>
+            }
         </div>
     </div>
 </li>

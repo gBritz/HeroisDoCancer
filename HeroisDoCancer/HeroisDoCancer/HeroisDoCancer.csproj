@@ -147,6 +147,7 @@
     <Compile Include="Repositorios\EventoRepositorio.cs" />
     <Compile Include="Services\Exceptions\CamposInvalidosException.cs" />
     <Compile Include="Services\VoluntarioService.cs" />
+    <Compile Include="ViewModels\ItemEventoViewModel.cs" />
     <Compile Include="ViewModels\PesquisaEventoViewModel.cs" />
     <Compile Include="ViewModels\RespostaOperacaoViewModel.cs" />
     <Compile Include="WebUtils\ContextoEmMemoria.cs" />

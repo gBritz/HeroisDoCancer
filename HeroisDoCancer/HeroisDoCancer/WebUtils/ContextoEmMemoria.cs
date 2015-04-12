@@ -174,7 +174,8 @@ namespace HeroisDoCancer.ContextoDados
                     Descricao = "Venha participar da festa de aniversário, que acontecerá neste dia 12 de abril.",
                     IdHospital = 1,
                     Hospital = hospitais[0],
-                    TipoSituacao = TipoSituacaoEnum.Confirmado
+                    TipoSituacao = TipoSituacaoEnum.Confirmado,
+                    Participantes = new List<Voluntario>()
                 },
                 new Evento
                 {
@@ -188,7 +189,8 @@ namespace HeroisDoCancer.ContextoDados
                             Cada encontro, um livro diferente; várias perspectivas.",
                     IdHospital = 1,
                     Hospital = hospitais[0],
-                    TipoSituacao = TipoSituacaoEnum.Confirmado
+                    TipoSituacao = TipoSituacaoEnum.Confirmado,
+                    Participantes = new List<Voluntario>()
                 },
                 new Evento
                 {
@@ -201,7 +203,8 @@ namespace HeroisDoCancer.ContextoDados
                     Descricao = @"Venha fantasiado de herói, para fazermos uma festa fantasia.",
                     IdHospital = 1,
                     Hospital = hospitais[0],
-                    TipoSituacao = TipoSituacaoEnum.Confirmado
+                    TipoSituacao = TipoSituacaoEnum.Confirmado,
+                    Participantes = new List<Voluntario>()
                 }
             };
 
