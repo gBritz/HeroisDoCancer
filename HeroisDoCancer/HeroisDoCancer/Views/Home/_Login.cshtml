@@ -1,12 +1,11 @@
 ﻿@using HeroisDoCancer.Models;
-@using HeroisDoCancer.WebUtils;
 
 @model Voluntario
 
 @{
+    Layout = String.Empty;
     var isAuthenticated = User.Identity.IsAuthenticated;
     var sDisplayNone = " style=display:none ";
-    var session = new SessionWrapper(new HttpSessionStateWrapper(System.Web.HttpContext.Current.Session));
 }
 
 <div class="col-sm-4 header_right">
@@ -41,9 +40,9 @@
         </div>
     </div>
     <div id="dados-usuario" class="loginLogado" @(isAuthenticated ? String.Empty : sDisplayNone)>
-        <img src="@(isAuthenticated ? session.Voluntario.Foto : String.Empty)" class="img-circle" />
+        <img src="@(isAuthenticated ? Model.Foto : String.Empty)" class="img-circle" />
 
-        <span class="nome">@(isAuthenticated ? session.Voluntario.Nome : String.Empty)</span>
+        <span class="nome">@(isAuthenticated ? Model.Nome : String.Empty)</span>
 
         @Ajax.ActionLink("Sair", "Logout", "Home", null, new AjaxOptions { HttpMethod = "POST", OnComplete = "sairCompleto" }, new { @class = "sair" })
     </div>
