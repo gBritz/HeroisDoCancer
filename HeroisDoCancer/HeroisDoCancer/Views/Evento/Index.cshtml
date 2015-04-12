@@ -1,11 +1,17 @@
-﻿@{
+﻿@using HeroisDoCancer.ViewModels;
+
+@model PesquisaEventoViewModel
+
+@{
     ViewBag.Title = "Index";
 }
+
 <link href="~/Content/buttonsocial.css" rel="stylesheet" />
 <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 <link href="~/Content/teste.css" rel="stylesheet" />
 <link href="~/Content/font-awesome.css" rel="stylesheet" />
 <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' />
+
 <div class="living_middle">
     <div class="container">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
@@ -20,112 +26,14 @@
             <h1 id="timeline">EVENTOS - ABRIL/2015</h1>
         </div>
         <ul class="timeline">
-            <li>
-                <div class="timeline-badge"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 class="timeline-title">Festa de aniversário</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>12/04/2015</small></p>
-                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
-                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
-                    </div>
-                    <div class="timeline-body">
-                        <p>Venha participar da festa de aniversário, que acontecerá neste dia 12 de abril.</p>
-                    </div>
-                    <div class="buttons_eventos">
-                    <div class="spacer"></div>
-                    
-                    <button class="btn btn-social-icon btn-facebook">
-                        <i class="fa fa-facebook">
-                        </i>
-                    </button>
-                    <button class="btn btn-social-icon btn-twitter">
-                        <i class="fa fa-twitter">
-                        </i>
-                    </button>
-                    <button class="btn btn-social-icon btn-google-plus">
-                        <i class="fa fa-google-plus">
-                        </i>
-                    </button>
-                        <button class="btn btn-primary" style="width: 105px; height: 34px; padding: 0; text-align: left; float: right;">
-                            <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
-                            <span class="">Participar</span>
-                    </button>
-                       
-                </div>
-                </div>
-            </li>
-            <li class="timeline-inverted">
-                <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 class="timeline-title">Leitura em grupo</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>11/04/2015</small></p>
-                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
-                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
-                    </div>
-                    <div class="timeline-body">
-                        <p>
-                            promovemos um encontro para compartilhar o que mais gostamos de fazer: ler livros!
-                            Cada encontro, um livro diferente; várias perspectivas.
-                        </p>
-                    </div>
-                    <div class="buttons_eventos">
-                        <div class="spacer"></div>
-
-                        <button class="btn btn-social-icon btn-facebook">
-                            <i class="fa fa-facebook">
-                            </i>
-                        </button>
-                        <button class="btn btn-social-icon btn-twitter">
-                            <i class="fa fa-twitter">
-                            </i>
-                        </button>
-                        <button class="btn btn-social-icon btn-google-plus">
-                            <i class="fa fa-google-plus">
-                            </i>
-                        </button>
-                        <button class="btn btn-primary" style="width: 105px; height: 34px; padding: 0; text-align: left; float: right;">
-                            <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
-                            <span class="">Participar</span>
-                        </button>
-                </div>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 class="timeline-title">Dia do Herói</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>10/04/2015</small></p>
-                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
-                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
-                    </div>
-                    <div class="timeline-body">
-                        <p>Venha fantasiado de herói, para fazermos uma festa fantasia.</p>
-                    </div>
-                    <div class="buttons_eventos">
-                        <div class="spacer"></div>
-
-                        <button class="btn btn-social-icon btn-facebook">
-                            <i class="fa fa-facebook">
-                            </i>
-                        </button>
-                        <button class="btn btn-social-icon btn-twitter">
-                            <i class="fa fa-twitter">
-                            </i>
-                        </button>
-                        <button class="btn btn-social-icon btn-google-plus">
-                            <i class="fa fa-google-plus">
-                            </i>
-                        </button>
-                        <button class="btn btn-primary" style="width: 105px; height: 34px; padding: 0; text-align: left; float: right;">
-                            <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
-                            <span class="">Participar</span>
-                        </button>
-                    </div>
-                </div>
-            </li>
+            @foreach (var evento in Model.Eventos)
+            {
+                @Html.Partial("_Item", evento)
+            }
         </ul>
     </div>
 </div>
+
 <script type="text/javascript">
     setTimeout(function () {
 
@@ -137,4 +45,8 @@
 
         $("#menuEventos").addClass("active");
     }, 200);
+
+    $(function () {
+        $(".timeline > li").addClass("timeline-inverted");
+    });
 </script>

@@ -1,40 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using HeroisDoCancer.ContextoDados;
+using HeroisDoCancer.Repositorios;
+using HeroisDoCancer.ViewModels;
 using System.Web.Mvc;
 
 namespace HeroisDoCancer.Controllers
 {
     public class EventoController : Controller
     {
-        //
-        // GET: /Evento/
+        private EventoRepositorio eventoRepo;
 
-        public ActionResult Index()
+        public EventoController()
         {
-            return View();
+            this.eventoRepo = new EventoRepositorio(new ContextoEmMemoria());
         }
 
-        //
-        // GET: /Evento/Details/5
+        [HttpGet]
+        public ActionResult Index()
+        {
+            var eventos = this.eventoRepo.ObterTodosConfirmados();
+            var vm = new PesquisaEventoViewModel 
+            {
+                Eventos = eventos
+            };
 
+            return View(vm);
+        }
+
+        [HttpGet]
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        //
-        // GET: /Evento/Create
-
+        [Authorize]
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
 
-        //
-        // POST: /Evento/Create
-
+        [Authorize]
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -50,18 +55,15 @@ namespace HeroisDoCancer.Controllers
             }
         }
 
-        //
-        // GET: /Evento/Edit/5
-
+        [Authorize]
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        //
-        // POST: /Evento/Edit/5
-
-        [HttpPost]
+        [Authorize]
+        [HttpPut]
         public ActionResult Edit(int id, FormCollection collection)
         {
             try
@@ -76,18 +78,15 @@ namespace HeroisDoCancer.Controllers
             }
         }
 
-        //
-        // GET: /Evento/Delete/5
-
+        [Authorize]
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        //
-        // POST: /Evento/Delete/5
-
-        [HttpPost]
+        [Authorize]
+        [HttpDelete]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try
