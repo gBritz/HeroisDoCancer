@@ -15,7 +15,7 @@
             <img src="~/Content/images/login.png"><span>Login</span>
         </a>
         <div id="loginBox">
-            @using (Ajax.BeginForm("Login", null, new AjaxOptions { HttpMethod = "POST", OnComplete = "logarCompleto" }, new { @id = "loginForm" }))
+            @using (Ajax.BeginForm("Login", "Home", null, new AjaxOptions { HttpMethod = "POST", OnComplete = "logarCompleto" }, new { @id = "loginForm" }))
             {
                 <fieldset id="body">
                     <fieldset>
@@ -45,7 +45,7 @@
 
         <span class="nome">@(isAuthenticated ? session.Voluntario.Nome : String.Empty)</span>
 
-        @Ajax.ActionLink("Sair", "Logout", null, new AjaxOptions { HttpMethod = "POST", OnComplete = "sairCompleto" }, new { @class = "sair" })
+        @Ajax.ActionLink("Sair", "Logout", "Home", null, new AjaxOptions { HttpMethod = "POST", OnComplete = "sairCompleto" }, new { @class = "sair" })
     </div>
     <div class="clearfix"></div>
 </div>
