@@ -155,6 +155,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\abraco.jpg" />
     <Content Include="Content\images\area.png" />
     <Content Include="Content\images\arrow.png" />
     <Content Include="Content\images\banner.jpg" />
@@ -178,6 +179,7 @@
     <Content Include="Content\images\icons.png" />
     <Content Include="Content\images\icons.svg" />
     <Content Include="Content\images\img-sprite.png" />
+    <Content Include="Content\images\kc2.jpg" />
     <Content Include="Content\images\l1.jpg" />
     <Content Include="Content\images\l2.jpg" />
     <Content Include="Content\images\l3.jpg" />
@@ -205,6 +207,7 @@
     <Content Include="Content\images\pic6.jpg" />
     <Content Include="Content\images\search.png" />
     <Content Include="Content\images\set.png" />
+    <Content Include="Content\images\sintoma2.jpg" />
     <Content Include="Content\images\slider1.jpg" />
     <Content Include="Content\images\slider2.jpg" />
     <Content Include="Content\images\slider4.jpg" />
