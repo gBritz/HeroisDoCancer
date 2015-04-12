@@ -10,13 +10,18 @@ namespace HeroisDoCancer.Models
         [Required(ErrorMessage = "Campo obrigatório")]
         public string Login { get; set; }
 
+        [Required(ErrorMessage = "Campo obrigatorio")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Campo obrigatório")]
+        [Required(ErrorMessage = "Campo obrigatorio")]
         public string Senha { get; set; }
 
-        public string Email { get; set; }
+        [Required(ErrorMessage = "Campo obrigatorio")]
+        public string ConfirmacaoSenha { get; set; }
 
+        [Required(ErrorMessage = "Campo obrigatorio")]
+        public string Email { get; set; }
+        
         public string Foto { get; set; }
 
         public ICollection<Evento> Eventos { get; set; }
