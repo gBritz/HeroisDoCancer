@@ -222,5 +222,11 @@ namespace HeroisDoCancer.ContextoDados
                 }            
             };
         }
+
+
+        public IQueryable<Hospital> Hospitais
+        {
+            get { return hospitais.AsQueryable(); }
+        }
     }
 }

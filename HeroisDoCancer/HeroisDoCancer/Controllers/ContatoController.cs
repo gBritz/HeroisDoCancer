@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HeroisDoCancer.ContextoDados;
+using HeroisDoCancer.Repositorios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,12 +10,20 @@ namespace HeroisDoCancer.Controllers
 {
     public class ContatoController : Controller
     {
-        //
-        // GET: /Contato/
+        private HospitalRepositorio hospitalRepo;
+
+        public ContatoController()
+        {
+            var contexto = new ContextoEmMemoria();
+
+            this.hospitalRepo = new HospitalRepositorio(contexto);
+        }
 
         public ActionResult Index()
         {
-            return View();
+            var hospitais = this.hospitalRepo.ObterTodos();
+
+            return View(hospitais);
         }
 
     }
