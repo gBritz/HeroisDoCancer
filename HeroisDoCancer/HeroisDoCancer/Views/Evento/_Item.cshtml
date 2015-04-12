@@ -3,8 +3,8 @@
 
 @model ItemEventoViewModel
 
-<li>
-    <div class="timeline-badge"><i class="glyphicon glyphicon-credit-card"></i></div>
+<li>   
+    <div class="timeline-badge"><i class="glyphicon glyphicon-credit-card" data-toggle="modal" data-target=".visualizar-evento-modal"></i></div>
     <div class="timeline-panel evento" data-id="@(Model.Evento.Id)">
         <div class="timeline-heading">
             <h4 class="timeline-title">@(Model.Evento.Nome)</h4>
@@ -40,8 +40,8 @@
                 <button class="btn btn-primary participar">
                     <span class="glyphicon glyphicon-plus-sign"></span>
                     <span>Participar</span>
-                </button>
+                </button>               
             }
         </div>
-    </div>
+    </div>       
 </li>

@@ -55,11 +55,16 @@
 
             $(".timeline > li:odd").addClass("timeline-inverted");
 
+            $(".timeline > li:odd").addClass("fadeInRight animated");
+            $(".timeline > li:even").addClass("fadeInLeft animated");
+
             $(".evento .btn.participar").click(function (ev) {
                 var button = $(this);
                 var tag = button.parents(".evento");
                 var idEvento = parseInt(tag.attr("data-id"), 10);
                 participarEvento(tag, button, idEvento);
+                $("#alertSucessoParticipar").show();
+                $("#alertSucessoParticipar").fadeOut(5000);
             });
         }, 200);
 
