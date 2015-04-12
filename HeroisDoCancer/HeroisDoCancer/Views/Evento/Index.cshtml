@@ -34,25 +34,56 @@
     </div>
 </div>
 
-<script type="text/javascript">
-    setTimeout(function () {
+@section scripts {
 
-        $("#menuHome").removeClass("active");
-        $("#menuSejaVoluntario").removeClass("active");
-        $("#menuEventos").removeClass("active");
-        $("#menuFotos").removeClass("active");
-        $("#menuContato").removeClass("active");
+    <script type="text/javascript">
+        setTimeout(function () {
 
-        $("#menuEventos").addClass("active");
+            $("#menuHome").removeClass("active");
+            $("#menuSejaVoluntario").removeClass("active");
+            $("#menuEventos").removeClass("active");
+            $("#menuFotos").removeClass("active");
+            $("#menuContato").removeClass("active");
 
-        $(".timeline > li:odd").addClass("timeline-inverted");
-    }, 200);
+            $("#menuEventos").addClass("active");
 
-    function depoisUsuarioLogadoSucesso() {
-        window.location = window.location;
-    }
+            $(".timeline > li:odd").addClass("timeline-inverted");
 
-    function depoisUsuarioDeslogar() {
-        window.location = window.location;
-    }
-</script>
+            $(".evento .btn.participar").click(function () {
+                var button = $(this);
+                var tag = button.parents(".evento");
+                var idEvento = parseInt(tag.attr("data-id"), 10);
+                participarEvento(tag, button, idEvento);
+            });
+        }, 200);
+
+        function depoisUsuarioLogadoSucesso() {
+            window.location = window.location;
+        }
+
+        function depoisUsuarioDeslogar() {
+            window.location = window.location;
+        }
+
+        function participarEvento(evento, button, id) {
+            button.attr("disabled", "disabled");
+            var btnText = button.find("span:last");
+            btnText.text("Aguarde...");
+
+            var url = "@Url.Action("Participar")";
+            $.post(url, { idEvento: id }, function (res) {
+                button.removeAttr("disabled");
+                btnText.text("Participar");
+
+                if (!res.Erro)
+                {
+                    evento.find(".vagas .numero").text(res.Data.TotalParticipantesRestantes);
+                    button.remove();
+                }
+                else {
+                    alert(res.Mensagem);
+                }
+            });
+        }
+    </script>
+}

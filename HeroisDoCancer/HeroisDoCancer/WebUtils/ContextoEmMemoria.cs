@@ -183,7 +183,7 @@ namespace HeroisDoCancer.ContextoDados
                     Nome = "Leitura em grupo",
                     DataHora = DateTime.Now.AddDays(3),
                     NroMaximoParticipantes = 4,
-                    NroParticipantesRestantes = 3,
+                    NroParticipantesRestantes = 4,
                     CriadoEm = new DateTime(2015, 04, 12, 01, 00, 00),
                     Descricao = @"Promovemos um encontro para compartilhar o que mais gostamos de fazer: ler livros!
                             Cada encontro, um livro diferente; várias perspectivas.",

@@ -3,6 +3,8 @@ using HeroisDoCancer.Repositorios;
 using HeroisDoCancer.Services;
 using HeroisDoCancer.ViewModels;
 using HeroisDoCancer.WebUtils;
+using System;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -42,6 +44,35 @@ namespace HeroisDoCancer.Controllers
             };
 
             return View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult Participar(Int32 idEvento)
+        {
+            if (idEvento <= 0)
+                throw new HttpException((Int32)HttpStatusCode.BadRequest, "Bad Request");
+
+            var result = new RespostaOperacaoViewModel();
+
+            var evento = this.eventoRepo.GetById(idEvento);
+
+            try
+            {
+                this.voluntarioSer.Participar(session.Voluntario, evento);
+
+                result.Data = new
+                {
+                    TotalParticipantesRestantes = evento.NroParticipantesRestantes,
+                    Situacao = evento.TipoSituacao
+                };
+            }
+            catch (Exception ex)
+            {
+                result.Erro = true;
+                result.Mensagem = ex.Message;
+            }
+
+            return Json(result);
         }
 
         [HttpGet]
