@@ -6,7 +6,7 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
+
 </head>
 <body>
     <div class="header">
@@ -47,7 +47,7 @@
         <div class="clearfix"></div>
     </div>
 
-    
+
     @RenderBody()
 
     <div class="footer">
@@ -75,30 +75,30 @@
                     </ul>
                 </div>
                 @*<div class="footer-grid">
-                    <h3>Assine nossa newsletter</h3>
-                    <form>
-                        <span>
-                            <i><img src="~/Content/images/mail.png" alt=""></i>
-                            <input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
-                            <label class="btn1 btn2 btn-2 btn-2g"> <input name="submit" type="submit" id="submit" value="Subscribe"> </label>
-                            <div class="clearfix"> </div>
-                        </span>
-                    </form>
-                </div>*@
-                    <div class="footer-grid last_grid">
-                        <h4>Follow Us</h4>
-                        <ul class="footer_social wow fadeInLeft" data-wow-delay="0.4s">
-                            <li><a href=""> <i class="fb"> </i> </a></li>
-                            <li><a href=""><i class="tw"> </i> </a></li>
-                            <li><a href=""><i class="google"> </i> </a></li>
-                            <li><a href=""><i class="u_tube"> </i> </a></li>
-                        </ul>
-                        <div class="copy wow fadeInRight" data-wow-delay="0.4s">
-                            <p>&copy; Template by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
-                        </div>
+                        <h3>Assine nossa newsletter</h3>
+                        <form>
+                            <span>
+                                <i><img src="~/Content/images/mail.png" alt=""></i>
+                                <input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
+                                <label class="btn1 btn2 btn-2 btn-2g"> <input name="submit" type="submit" id="submit" value="Subscribe"> </label>
+                                <div class="clearfix"> </div>
+                            </span>
+                        </form>
+                    </div>*@
+                <div class="footer-grid last_grid">
+                    <h4>Follow Us</h4>
+                    <ul class="footer_social wow fadeInLeft" data-wow-delay="0.4s">
+                        <li><a href=""> <i class="fb"> </i> </a></li>
+                        <li><a href=""><i class="tw"> </i> </a></li>
+                        <li><a href=""><i class="google"> </i> </a></li>
+                        <li><a href=""><i class="u_tube"> </i> </a></li>
+                    </ul>
+                    <div class="copy wow fadeInRight" data-wow-delay="0.4s">
+                        <p>&copy; Template by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
                     </div>
-                    <div class="clearfix"> </div>
                 </div>
+                <div class="clearfix"> </div>
+            </div>
         </div>
     </div>
 
@@ -108,9 +108,84 @@
     @Scripts.Render("~/bundles/outhers")
     @RenderSection("scripts", required: false)
 
-    <script src="~/Script/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
 
 
 
+<!-- Modal de Cadastro de Voluntários -->
+
+<div class="modal fade modalCadastroVoluntario">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Cadastre-se</h4>
+            </div>
+            <div class="modal-body">
+                <div class="banner">
+
+                    @using (@Html.BeginForm("Cadastro", "Voluntario", "POST"))
+                    {
+                        @model HeroisDoCancer.Models.Voluntario
+
+                        <div class="clearfix"></div>
+                        <div class="container_wrap">
+                            <div class="form-group spacer">
+                                <div class="spacer">
+                                    @Html.Label("Nome")
+                                    @Html.TextBoxFor(v => v.Nome)
+                                    @Html.ValidationMessageFor(v => v.Nome)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container_wrap">
+                            <div class="form-group">
+                                @Html.Label("E-mail")
+                                @Html.TextBoxFor(v => v.Email)
+                                @Html.ValidationMessageFor(v => v.Email)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.Label("Senha")
+                            @Html.TextBoxFor(v => v.Senha)
+                            @Html.ValidationMessageFor(v => v.Senha)
+                        </div>
+
+                        <div class="form-group">
+                            @Html.Label("Confirmar senha")
+                            @Html.TextBoxFor(v => v.ConfirmacaoSenha)
+                            @Html.ValidationMessageFor(v => v.ConfirmacaoSenha)
+                        </div>
+                    }
+
+
+
+
+                </div>
+                @section scripts
+                        {
+                    <script type="text/javascript">
+                        function cadastroCompleto(hrx, operation) {
+                            var res = JSON.parse(hrx.responseText);
+                            if (!res.Erro) {
+                                $("form#form0 :text").val("");
+                                window.location = "@(Url.Action("Index", "Evento"))";
+                            }
+                            else
+                                alert(res.Mensagem);
+                        }
+                    </script>
+                }
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default">Cadastrar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Modal de Cadastro de Voluntários -->

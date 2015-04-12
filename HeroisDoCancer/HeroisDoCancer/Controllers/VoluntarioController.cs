@@ -37,7 +37,7 @@ namespace HeroisDoCancer.Controllers
                 result.Erro = true;
                 result.Mensagem = ex.Message;
             }
-            
+            result.Mensagem = "Cadastro efetuado com sucesso.";
             return Json(result);
         }
     }
