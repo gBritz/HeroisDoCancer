@@ -19,7 +19,7 @@ namespace HeroisDoCancer.Controllers
         public HomeController()
         {
             this.session = new SessionWrapper(new HttpSessionStateWrapper(System.Web.HttpContext.Current.Session));
-            this.context = new DadosEmMemoria();
+            this.context = new ContextoEmMemoria();
         }
 
         [HttpGet]

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HeroisDoCancer.ContextoDados
 {
-    public class DadosEmMemoria : IContextoDados
+    public class ContextoEmMemoria : IContextoDados
     {
         private static readonly Object locker = new Object();
         private static Boolean iniciado;
@@ -13,7 +13,7 @@ namespace HeroisDoCancer.ContextoDados
         private static List<Comentario> comentarios;
         private static List<Evento> eventos;
 
-        public DadosEmMemoria()
+        public ContextoEmMemoria()
         {
             IniciarDados();
         }
