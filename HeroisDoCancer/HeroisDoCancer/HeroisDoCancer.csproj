@@ -154,6 +154,9 @@
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\buttonsocial.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\images\area.png" />
     <Content Include="Content\images\arrow.png" />
@@ -316,6 +319,7 @@
     <Content Include="Views\Home\_Login.cshtml" />
     <Content Include="Views\SejaVoluntario\Index.cshtml" />
     <Content Include="Views\Voluntario\Index.cshtml" />
+    <Content Include="Views\Galeria\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

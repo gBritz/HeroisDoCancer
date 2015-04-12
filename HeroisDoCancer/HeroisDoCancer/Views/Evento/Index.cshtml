@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Heróis do câncer";
 }
 <link href="~/Content/buttonsocial.css" rel="stylesheet" />
 <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
@@ -8,21 +8,72 @@
 <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' />
 <div class="living_middle">
     <div class="container">
+        <!-- Large modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
-        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
+
+        <div class="modal fade bs-example-modal-lg">
+            <div class="modal-dialog">
                 <div class="modal-content">
-                    ...
-                </div>
-            </div>
-        </div>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Cadastre seu evento</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
         <div class="page-header">
             <h1 id="timeline">EVENTOS - ABRIL/2015</h1>
+        </div>
+        <div class="content_top" style="background: #f3f1f2">
+            <div class="container">
+                <div class="col-md-4 bottom_nav">
+                    <div class="content_menu">
+                        <ul>
+                            <li class="active"><a href="#">GERAL</a></li>
+                            <li><a href="#">MEUS EVENTOS</a></li>
+                            <li><a href="#">EVENTOS INATIVOS</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 content_dropdown1">
+                    <div class="content_dropdown">
+                        <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"metro"}'>
+                            <option value="0">Dubai</option>
+                            <option value="1">tempor</option>
+                            <option value="2">congue</option>
+                            <option value="3">mazim </option>
+                            <option value="4">mutationem</option>
+                            <option value="5">hendrerit </option>
+                            <option value="5"></option>
+                            <option value="5"></option>
+                        </select>
+                    </div>
+                    <div class="content_dropdown">
+                        <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"metro"}'>
+                            <option value="0">Show Map</option>
+                            <option value="1">tempor</option>
+                            <option value="2">congue</option>
+                            <option value="3">mazim </option>
+                            <option value="4">mutationem</option>
+                            <option value="5">hendrerit </option>
+                            <option value="5"></option>
+                            <option value="5"></option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
         <ul class="timeline">
             <li>
                 <div class="timeline-badge"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel">
+                <div class="timeline-panel wow fadeInLeft animated" style="visibility: visible; -webkit-animation-delay: 0.5s;">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">Festa de aniversário</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>12/04/2015</small></p>
                         <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
@@ -32,34 +83,34 @@
                         <p>Venha participar da festa de aniversário, que acontecerá neste dia 12 de abril.</p>
                     </div>
                     <div class="buttons_eventos">
-                    <div class="spacer"></div>
-                    
-                    <button class="btn btn-social-icon btn-facebook">
-                        <i class="fa fa-facebook">
-                        </i>
-                    </button>
-                    <button class="btn btn-social-icon btn-twitter">
-                        <i class="fa fa-twitter">
-                        </i>
-                    </button>
-                    <button class="btn btn-social-icon btn-google-plus">
-                        <i class="fa fa-google-plus">
-                        </i>
-                    </button>
+                        <div class="spacer"></div>
+
+                        <button class="btn btn-social-icon btn-facebook">
+                            <i class="fa fa-facebook">
+                            </i>
+                        </button>
+                        <button class="btn btn-social-icon btn-twitter">
+                            <i class="fa fa-twitter">
+                            </i>
+                        </button>
+                        <button class="btn btn-social-icon btn-google-plus">
+                            <i class="fa fa-google-plus">
+                            </i>
+                        </button>
                         <button class="btn btn-primary" style="width: 105px; height: 34px; padding: 0; text-align: left; float: right;">
                             <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
                             <span class="">Participar</span>
-                    </button>
-                       
-                </div>
+                        </button>
+
+                    </div>
                 </div>
             </li>
             <li class="timeline-inverted">
                 <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel">
+                <div class="timeline-panel wow fadeInRight animated" style="visibility: visible; -webkit-animation-delay: 0.5s;">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">Leitura em grupo</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>11/04/2015</small></p>
-                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
+                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">6</span></small></p>
                         <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
                     </div>
                     <div class="timeline-body">
@@ -87,15 +138,15 @@
                             <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
                             <span class="">Participar</span>
                         </button>
-                </div>
+                    </div>
                 </div>
             </li>
             <li>
                 <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel">
+                <div class="timeline-panel wow fadeInLeft animated" style="visibility: visible; -webkit-animation-delay: 0.5s;">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">Dia do Herói</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>10/04/2015</small></p>
-                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
+                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">10</span></small></p>
                         <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
                     </div>
                     <div class="timeline-body">
