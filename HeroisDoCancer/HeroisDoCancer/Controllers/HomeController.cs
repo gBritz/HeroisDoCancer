@@ -69,6 +69,12 @@ namespace HeroisDoCancer.Controllers
             FormsAuthentication.SignOut();
         }
 
+        [ChildActionOnly]
+        public ActionResult ModalLogin()
+        {
+            return View("_Login", this.session.Voluntario);
+        }
+
         private Boolean ValidoParaLogin(Voluntario voluntario, ref String erro)
         {
             erro = String.Empty;
