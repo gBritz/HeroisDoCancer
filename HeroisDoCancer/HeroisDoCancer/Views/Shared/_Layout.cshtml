@@ -12,7 +12,7 @@
     <div class="header">
         <div class="col-sm-8 header-left">
             <div class="logo">
-                <a href="index.html"><img src="~/Content/images/logo.png" alt="" /></a>
+                <a href="@Url.Action("Index", "Home")"><img src="~/Content/images/logos.png" alt="" /></a>
             </div>
             <div class="menu">
                 <a class="toggleMenu" href="#"><img src="~/Content/images/nav.png" alt="" /></a>
@@ -20,7 +20,7 @@
                     <li id="menuHome" class="active">@Html.ActionLink("Home", "Index", "Home")</li>
                     <li id="menuSejaVoluntario">@Html.ActionLink("Seja um Voluntário", "Index", "SejaVoluntario")</li>
                     <li id="menuEventos">@Html.ActionLink("Eventos", "Index", "Evento")</li>
-                    <li id="menuFotos">@Html.ActionLink("Fotos", "Index", "Home")</li>
+                    <li id="menuFotos">@Html.ActionLink("Fotos", "Index", "Galeria")</li>
                     <li id="menuContato">@Html.ActionLink("Contatos", "Index", "Contato")</li>
                     <div class="clearfix"></div>
                 </ul>
@@ -68,7 +68,7 @@
                     <h4>Inicial</h4>
                     <ul class="list1">
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Fotos", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Fotos", "Index", "Galeria")</li>
                     </ul>
                 </div>
                 <div class="footer-grid">
@@ -102,5 +102,14 @@
     @RenderSection("scripts", required: false)
 
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.swipebox.min.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".swipebox").swipebox();
+            new WOW().init();
+        });
+    </script>
+
 </body>
 </html>

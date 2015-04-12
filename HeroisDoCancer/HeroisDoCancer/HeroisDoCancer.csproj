@@ -325,7 +325,6 @@
     <Content Include="Views\Home\_Login.cshtml" />
     <Content Include="Views\SejaVoluntario\Index.cshtml" />
     <Content Include="Views\Voluntario\Index.cshtml" />
-    <Content Include="Views\Galeria\Index.cshtml" />
     <Content Include="Views\Evento\_Item.cshtml" />
     <Content Include="Views\Evento\_CriarEvento.cshtml" />
     <Content Include="Views\Evento\_VisualizarEvento.cshtml" />
