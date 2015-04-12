@@ -5812,3 +5812,10 @@ button .title {
     background: #0971E4;
     right: 0; width: 100px
 }
+
+.timeline-panel:hover {
+  cursor: pointer;
+  background:#FFFAF0;
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
+}
