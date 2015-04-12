@@ -235,6 +235,13 @@ body a{
     background:#e94e38;
     padding:1.5em 2em;
 }
+
+.loginLogado {
+    position:relative;
+    background:#e94e38;
+    padding: 0.98em 2em;
+}
+  
 .login a span{
    padding:0px 0px 0 5px;
 	color: #fff;
