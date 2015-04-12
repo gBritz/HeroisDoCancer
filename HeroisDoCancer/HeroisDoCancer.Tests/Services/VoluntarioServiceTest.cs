@@ -7,6 +7,7 @@ using Moq;
 using Moq.Protected;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HeroisDoCancer.Tests.Services
 {
@@ -21,7 +22,7 @@ namespace HeroisDoCancer.Tests.Services
                 .Returns(new[]
                 {
                     new Voluntario { Nome = "Fabio" }
-                });
+                }.AsQueryable());
 
             var servico = new VoluntarioService(contextoMock.Object);
             var voluntario = new Voluntario { Nome = "Fabio" };

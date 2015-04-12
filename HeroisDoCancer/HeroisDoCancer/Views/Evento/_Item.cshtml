@@ -1,0 +1,47 @@
+﻿@using HeroisDoCancer.Models;
+@using HeroisDoCancer.ViewModels;
+
+@model ItemEventoViewModel
+
+<li>
+    <div class="timeline-badge"><i class="glyphicon glyphicon-credit-card"></i></div>
+    <div class="timeline-panel evento" data-id="@(Model.Evento.Id)">
+        <div class="timeline-heading">
+            <h4 class="timeline-title">@(Model.Evento.Nome)</h4>
+            <p>
+                <small class="text-muted" style="float:right">
+                    <i class="glyphicon glyphicon-calendar"></i>@(Model.Evento.DataHora.ToString("dd/MM/yyyy hh:mm"))
+                </small>
+            </p>
+            <p><small class="text-muted vagas"></i>Vagas para esse evento <span class="badge numero">@(Model.Evento.NroParticipantesRestantes)</span></small></p>
+            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
+        </div>
+        <div class="timeline-body">
+            <p>@(Model.Evento.Descricao)</p>
+        </div>
+        <div class="buttons_eventos">
+            <div class="spacer"></div>
+
+            <button class="btn btn-social-icon btn-facebook">
+                <i class="fa fa-facebook">
+                </i>
+            </button>
+            <button class="btn btn-social-icon btn-twitter">
+                <i class="fa fa-twitter">
+                </i>
+            </button>
+            <button class="btn btn-social-icon btn-google-plus">
+                <i class="fa fa-google-plus">
+                </i>
+            </button>
+
+            @if (Model.UsuarioLogadoPodeParticipar())
+            {
+                <button class="btn btn-primary participar">
+                    <span class="glyphicon glyphicon-plus-sign"></span>
+                    <span>Participar</span>
+                </button>
+            }
+        </div>
+    </div>
+</li>

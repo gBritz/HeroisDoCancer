@@ -1,12 +1,11 @@
 ﻿@using HeroisDoCancer.Models;
-@using HeroisDoCancer.WebUtils;
 
 @model Voluntario
 
 @{
+    Layout = String.Empty;
     var isAuthenticated = User.Identity.IsAuthenticated;
     var sDisplayNone = " style=display:none ";
-    var session = new SessionWrapper(new HttpSessionStateWrapper(System.Web.HttpContext.Current.Session));
 }
 
 <div class="col-sm-4 header_right">
@@ -36,14 +35,15 @@
                     </label>
                 </fieldset>
 
-                <span><a href="#">Esqueceu sua senha?</a></span>
+                <span><a href="#">Esqueci minha Senha</a> | @Html.ActionLink("Quero me Cadastrar", "Cadastro", "Voluntario")</span>                 
             }
         </div>
     </div>
-    <div id="dados-usuario" class="loginLogado" @(isAuthenticated ? String.Empty : sDisplayNone)>
-        <img src="@(isAuthenticated ? session.Voluntario.Foto : String.Empty)" class="img-circle" />
 
-        <span class="nome">@(isAuthenticated ? session.Voluntario.Nome : String.Empty)</span>
+    <div id="dados-usuario" class="loginLogado" @(isAuthenticated ? String.Empty : sDisplayNone)>
+        <img src="@(isAuthenticated ? Model.Foto : String.Empty)" class="img-circle" />
+
+        <span class="nome">@(isAuthenticated ? Model.Nome : String.Empty)</span>
 
         @Ajax.ActionLink("Sair", "Logout", "Home", null, new AjaxOptions { HttpMethod = "POST", OnComplete = "sairCompleto" }, new { @class = "sair" })
     </div>
@@ -55,7 +55,7 @@
         console.log("logarCompleto %o", arguments);
         var res = JSON.parse(htx.responseText);
         if (res.Erro) {
-            alet(res.Mensagem);
+            alert(res.Mensagem);
             return;
         }
 
@@ -65,11 +65,17 @@
 
         $("#loginContainer").hide();
         dadosUsuario.show();
+
+        if (depoisUsuarioLogadoSucesso)
+            depoisUsuarioLogadoSucesso();
     }
 
     function sairCompleto(htx, operacao) {
         console.log("sairCompleto %o", arguments);
         $("#loginContainer").show();
         $("#dados-usuario").hide();
+
+        if (depoisUsuarioDeslogar)
+            depoisUsuarioDeslogar();
     }
 </script>

@@ -9,32 +9,31 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="~/Content/images/slider1.jpg" alt="Chania">
+                <img src="~/Content/images/heroi1.jpg" alt="Chania">
                 <div class="carousel-caption">
-                    <h3>Chania</h3>
-                    <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                    @*<h3>A turminha está toda reunida.</h3>
+                    <p>:)</p>*@
                 </div>
             </div>
 
             <div class="item">
                 <img src="~/Content/images/slider2.jpg" alt="Chania">
                 <div class="carousel-caption">
-                    <h3>Chania</h3>
-                    <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                    @*<h3>Chania</h3>
+                    <p>The atmosphere in Chania has a touch of Florence and Venice.</p>*@
                 </div>
             </div>
 
             <div class="item">
-                <img src="~/Content/images/slider4.jpg" alt="Flower">
+                <img src="~/Content/images/heroi3.jpg" alt="Flower">
                 <div class="carousel-caption">
-                    <h3>Flowers</h3>
-                    <p>Beatiful flowers in Kolymbari, Crete.</p>
+                    @*<h3>Flowers</h3>
+                    <p>Beatiful flowers in Kolymbari, Crete.</p>*@
                 </div>
             </div>
         </div>
@@ -50,45 +49,7 @@
         </a>
     </div>
 </div>
-<div class="content_top">
-    <div class="container">
-        <div class="col-md-4 bottom_nav">
-            <div class="content_menu">
-                <ul>
-                    <li class="active"><a href="#">Recommended</a></li>
-                    <li><a href="#">Latest</a></li>
-                    <li><a href="#">Highlights</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-4 content_dropdown1">
-            <div class="content_dropdown">
-                <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"metro"}'>
-                    <option value="0">Dubai</option>
-                    <option value="1">tempor</option>
-                    <option value="2">congue</option>
-                    <option value="3">mazim </option>
-                    <option value="4">mutationem</option>
-                    <option value="5">hendrerit </option>
-                    <option value="5"></option>
-                    <option value="5"></option>
-                </select>
-            </div>
-            <div class="content_dropdown">
-                <select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"metro"}'>
-                    <option value="0">Show Map</option>
-                    <option value="1">tempor</option>
-                    <option value="2">congue</option>
-                    <option value="3">mazim </option>
-                    <option value="4">mutationem</option>
-                    <option value="5">hendrerit </option>
-                    <option value="5"></option>
-                    <option value="5"></option>
-                </select>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="content_middle">
     <div class="container">
         <div class="content_middle_box">
@@ -99,53 +60,43 @@
                             <div class="index_img"><img alt="" class="img-responsive" src="~/Content/images/abraco.jpg"></div>
                         </div>
                         <div class="inner_wrap">
-
                             <ul class="item_module">
                                 <li class="module_right">
-                                    <h5><a href="#">Seja um voluntário</a></h5>
+                                    <h5>A sua doação é um abraço que melhora o mundo</h5>
+                                    <p>@Html.ActionLink("Clique aqui e veja como se tornar um voluntário", "Index", "SejaVoluntario")</p>
                                 </li>
                                 <div class="clearfix"> </div>
                             </ul>
-
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="grid1">
                         <div class="view view-first">
-                            <div class="index_img1"><img alt="" class="img-responsive" src="images/pic6.jpg"></div>
-
+                            <div class="index_img1"><img alt="" class="img-responsive" src="~/Content/images/cancerinfant.jpg"></div>
+                           
                         </div>
                         <div class="inner_wrap">
-                            <h3>Leia mais sobre o câncer infantil</h3>
-                            <ul class="star1">
-                                <li><a href="#">Conheça os sintomas da leucemia infantil</a></li>
-                                <li><a href="#">Conheça os sintomas da leucemia infantil</a></li>
-                                <li><a href="#">Conheça os sintomas da leucemia infantil</a></li>
+                            <ul class="item_module">
+                                <li class="module_right">
+                                    <h5>Palavras e gestos de carinho contribuem para minimizar o estresse causado pela doença.</h5>
+                                </li>
+                                <div class="clearfix"> </div>
                             </ul>
-
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="grid1">
                         <div class="view view-first">
-                            <div class="index_img2"><img alt="" class="img-responsive" src="images/pic2.jpg"></div>
-                            <div class="mask">
-                                <div class="info"><i class="search"> </i> Show More</div>
-                                <ul class="mask_img">
-                                    <li class="star"><img alt="" src="images/star.png"></li>
-                                    <li class="set"><img alt="" src="images/set.png"></li>
-                                    <div class="clearfix"> </div>
-                                </ul>
-                            </div>
+                            <div class="index_img2"><img alt="" class="img-responsive" src="~/Content/images/doetempo.jpg"></div>
                         </div>
-                        <i class="home2"> </i>
                         <div class="inner_wrap">
-                            <h3>2 bedroom house for rent in Dubai</h3>
-                            <ul class="star1">
-                                <h4 class="blue">Vision Agency</h4>
-                                <li><a href="#"> <img alt="" src="images/star2.png">(136)</a></li>
+                            <ul class="item_module">
+                                <li class="module_right">
+                                    <h5>Nossos heróis buscam forças na solidariedade de corações generosos.</h5>
+                                </li>
+                                <div class="clearfix"> </div>
                             </ul>
                         </div>
                     </div>
@@ -181,6 +132,6 @@
                 </div>
                 <div class="clearfix"> </div>
             </div>
+            </div>
         </div>
     </div>
-</div>

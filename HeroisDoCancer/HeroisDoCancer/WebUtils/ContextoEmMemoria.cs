@@ -1,6 +1,7 @@
 ﻿using HeroisDoCancer.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace HeroisDoCancer.ContextoDados
 {
@@ -18,9 +19,14 @@ namespace HeroisDoCancer.ContextoDados
             IniciarDados();
         }
 
-        public ICollection<Voluntario> Voluntarios
+        public IQueryable<Voluntario> Voluntarios
         {
-            get { return voluntarios; }
+            get { return voluntarios.AsQueryable(); }
+        }
+
+        public IQueryable<Evento> Eventos
+        {
+            get { return eventos.AsQueryable(); }
         }
 
         public void Adiciona<TModel>(TModel model) where TModel : class
@@ -160,15 +166,45 @@ namespace HeroisDoCancer.ContextoDados
                 new Evento
                 {
                     Id = 1,
-                    NroMaximoParticipantes = 5,               
+                    Nome = "Festa de aniversário",
                     DataHora = DateTime.Now.AddDays(2),
-                    Descricao = "Aniversário do Joãozinho",
-                    Comentarios = null,
-                    Depoimentos = null,
-                    Fotos = null,
+                    NroMaximoParticipantes = 4,
+                    NroParticipantesRestantes = 4,
+                    CriadoEm = new DateTime(2015, 04, 12, 01, 00, 00),
+                    Descricao = "Venha participar da festa de aniversário, que acontecerá neste dia 12 de abril.",
                     IdHospital = 1,
-                    Participantes = null,
-                    TipoSituacao = TipoSituacaoEnum.Confirmado
+                    Hospital = hospitais[0],
+                    TipoSituacao = TipoSituacaoEnum.Confirmado,
+                    Participantes = new List<Voluntario>()
+                },
+                new Evento
+                {
+                    Id = 2,
+                    Nome = "Leitura em grupo",
+                    DataHora = DateTime.Now.AddDays(3),
+                    NroMaximoParticipantes = 4,
+                    NroParticipantesRestantes = 4,
+                    CriadoEm = new DateTime(2015, 04, 12, 01, 00, 00),
+                    Descricao = @"Promovemos um encontro para compartilhar o que mais gostamos de fazer: ler livros!
+                            Cada encontro, um livro diferente; várias perspectivas.",
+                    IdHospital = 1,
+                    Hospital = hospitais[0],
+                    TipoSituacao = TipoSituacaoEnum.Confirmado,
+                    Participantes = new List<Voluntario>()
+                },
+                new Evento
+                {
+                    Id = 3,
+                    Nome = "Dia do Herói",
+                    DataHora = DateTime.Now.AddDays(5),
+                    NroMaximoParticipantes = 4,
+                    NroParticipantesRestantes = 4,
+                    CriadoEm = new DateTime(2015, 04, 12, 01, 00, 00),
+                    Descricao = @"Venha fantasiado de herói, para fazermos uma festa fantasia.",
+                    IdHospital = 1,
+                    Hospital = hospitais[0],
+                    TipoSituacao = TipoSituacaoEnum.Confirmado,
+                    Participantes = new List<Voluntario>()
                 }
             };
 

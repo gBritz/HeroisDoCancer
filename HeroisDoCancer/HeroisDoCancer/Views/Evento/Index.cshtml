@@ -1,6 +1,11 @@
-﻿@{
+﻿@using HeroisDoCancer.ViewModels;
+
+@model PesquisaEventoViewModel
+
+@{
     ViewBag.Title = "Heróis do câncer";
 }
+
 <link href="~/Content/buttonsocial.css" rel="stylesheet" />
 <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 <link href="~/Content/teste.css" rel="stylesheet" />
@@ -247,10 +252,10 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    </div>
+            </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
@@ -309,47 +314,43 @@
                     </div>*@
             </div>
         </div>
-        <ul class="timeline" data-toggle="modal" data-target=".visualizar-evento-modal">
+        <ul class="timeline">
             <li>
                 <div class="timeline-badge"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel wow fadeInLeft animated" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">Festa de aniversário</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>12/04/2015</small></p>
                         <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
                         <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
                     </div>
-                    <div class="timeline-body">
-                        <p>Venha participar da festa de aniversário, que acontecerá neste dia 12 de abril.</p>
                     </div>
-                    <div class="buttons_eventos">
-                        <div class="spacer"></div>
-
-                        <button class="btn btn-social-icon btn-facebook">
-                            <i class="fa fa-facebook">
-                            </i>
-                        </button>
-                        <button class="btn btn-social-icon btn-twitter">
-                            <i class="fa fa-twitter">
-                            </i>
-                        </button>
-                        <button class="btn btn-social-icon btn-google-plus">
-                            <i class="fa fa-google-plus">
-                            </i>
-                        </button>
+                    
+                    <button class="btn btn-social-icon btn-facebook">
+                        <i class="fa fa-facebook">
+                        </i>
+                    </button>
+                    <button class="btn btn-social-icon btn-twitter">
+                        <i class="fa fa-twitter">
+                        </i>
+                    </button>
+                    <button class="btn btn-social-icon btn-google-plus">
+                        <i class="fa fa-google-plus">
+                        </i>
+                    </button>
                         <button class="btn btn-primary" style="width: 105px; height: 34px; padding: 0; text-align: left; float: right;">
                             <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
                             <span class="">Participar</span>
-                        </button>
-
-                    </div>
+                    </button>
+                       
+                </div>
                 </div>
             </li>
             <li class="timeline-inverted">
                 <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel wow fadeInRight animated" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">Leitura em grupo</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>11/04/2015</small></p>
-                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">6</span></small></p>
+                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
                         <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
                     </div>
                     <div class="timeline-body">
@@ -377,15 +378,15 @@
                             <span class="glyphicon glyphicon-plus-sign" style="padding: 0 10px;"></span>
                             <span class="">Participar</span>
                         </button>
-                    </div>
+                </div>
                 </div>
             </li>
             <li>
                 <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
-                <div class="timeline-panel wow fadeInLeft animated" style="visibility: visible; -webkit-animation-delay: 0.5s;">
+                <div class="timeline-panel">
                     <div class="timeline-heading">
                         <h4 class="timeline-title">Dia do Herói</h4><p><small class="text-muted" style="float:right"><i class="glyphicon glyphicon-calendar"></i>10/04/2015</small></p>
-                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">10</span></small></p>
+                        <p><small class="text-muted"></i>Vagas para esse evento <span class="badge">4</span></small></p>
                         <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> postado 10 horas atrás</small></p>
                     </div>
                     <div class="timeline-body">
@@ -426,5 +427,44 @@
         $("#menuContato").removeClass("active");
 
         $("#menuEventos").addClass("active");
+
+            $(".timeline > li:odd").addClass("timeline-inverted");
+
+            $(".evento .btn.participar").click(function () {
+                var button = $(this);
+                var tag = button.parents(".evento");
+                var idEvento = parseInt(tag.attr("data-id"), 10);
+                participarEvento(tag, button, idEvento);
+            });
     }, 200);
+
+        function depoisUsuarioLogadoSucesso() {
+            window.location = window.location;
+        }
+
+        function depoisUsuarioDeslogar() {
+            window.location = window.location;
+        }
+
+        function participarEvento(evento, button, id) {
+            button.attr("disabled", "disabled");
+            var btnText = button.find("span:last");
+            btnText.text("Aguarde...");
+
+            var url = "@Url.Action("Participar")";
+            $.post(url, { idEvento: id }, function (res) {
+                button.removeAttr("disabled");
+                btnText.text("Participar");
+
+                if (!res.Erro)
+                {
+                    evento.find(".vagas .numero").text(res.Data.TotalParticipantesRestantes);
+                    button.remove();
+                }
+                else {
+                    alert(res.Mensagem);
+                }
+            });
+        }
 </script>
+}
