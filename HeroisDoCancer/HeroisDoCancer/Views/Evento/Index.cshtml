@@ -44,9 +44,7 @@
         $("#menuContato").removeClass("active");
 
         $("#menuEventos").addClass("active");
-    }, 200);
 
-    $(function () {
-        $(".timeline > li").addClass("timeline-inverted");
-    });
+        $(".timeline > li:odd").addClass("timeline-inverted");
+    }, 200);
 </script>
