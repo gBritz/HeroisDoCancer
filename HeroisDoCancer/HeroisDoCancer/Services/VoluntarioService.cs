@@ -47,10 +47,30 @@ namespace HeroisDoCancer.Services
             if (ExisteParticipanteNo(voluntario, evento))
                 result = false;
 
-            else if (evento.NroParticipantesRestantes == evento.NroMaximoParticipantes)
+            else if (evento.NroParticipantesRestantes == 0 || evento.NroMaximoParticipantes == 1)
                 result = false;
 
             return result;
+        }
+
+        public void Participar(Voluntario voluntario, Evento evento)
+        {
+            if (voluntario == null)
+                throw new ArgumentNullException("voluntario");
+
+            if (evento == null)
+                throw new ArgumentNullException("evento");
+
+            if (!PodeParticipar(voluntario, evento))
+                throw new Exception("Evento já está completo. Você não vai conseguir participar dele.");
+
+            evento.Participantes.Add(voluntario);
+            evento.NroParticipantesRestantes = evento.NroMaximoParticipantes - evento.Participantes.Count;
+
+            if (evento.NroParticipantesRestantes == 0)
+                evento.TipoSituacao = TipoSituacaoEnum.Completo;
+
+            contexto.Publica();
         }
 
         public Boolean ExisteParticipanteNo(Voluntario participante, Evento evento)
