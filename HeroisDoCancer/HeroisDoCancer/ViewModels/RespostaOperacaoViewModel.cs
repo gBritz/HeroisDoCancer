@@ -7,5 +7,7 @@ namespace HeroisDoCancer.ViewModels
         public Boolean Erro { get; set; }
 
         public String Mensagem { get; set; }
+
+        public Object Data { get; set; }
     }
 }

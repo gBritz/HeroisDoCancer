@@ -1,0 +1,56 @@
+﻿@using HeroisDoCancer.Models;
+
+@model Voluntario
+
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+@using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "POST", OnComplete = "cadastroCompleto" }))
+{
+    <fieldset id="body">
+        @Html.Label("Cadastre-se")
+
+        <fieldset>
+            @Html.Label("Nome")
+            @Html.TextBoxFor(v => v.Nome)
+            @Html.ValidationMessageFor(v => v.Nome)
+        </fieldset>
+
+        <fieldset>
+            @Html.Label("E-mail")
+            @Html.TextBoxFor(v => v.Email)
+            @Html.ValidationMessageFor(v => v.Email)
+        </fieldset>
+
+        <fieldset>
+            @Html.Label("Senha")
+            @Html.TextBoxFor(v => v.Senha)
+            @Html.ValidationMessageFor(v => v.Senha)
+        </fieldset>
+
+        <fieldset>
+            @Html.Label("Confirmar senha")
+            @Html.TextBoxFor(v => v.ConfirmacaoSenha)
+            @Html.ValidationMessageFor(v => v.ConfirmacaoSenha)
+        </fieldset>
+
+        <input type="submit" value="Cadastrar" />
+    </fieldset>
+}
+
+@section scripts
+{
+    <script type="text/javascript">
+        function cadastroCompleto(hrx, operation) {
+            var res = JSON.parse(hrx.responseText);
+            if (!res.Erro)
+            {
+                $("form#form0 :text").val("");
+                window.location = "@(Url.Action("Index", "Evento"))";
+            }
+            else
+                alert(res.Mensagem);
+        }
+    </script>
+}

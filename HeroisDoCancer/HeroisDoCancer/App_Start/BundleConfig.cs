@@ -43,6 +43,7 @@ namespace HeroisDoCancer
                 "~/Content/site.css",
                 "~/Content/animate.css",
                 "~/Content/bootstrap.css",
+                "~/Content/bootstrap.min.css",
                 "~/Content/style.css",
                 "~/Content/swipebox.css"
                 ));
