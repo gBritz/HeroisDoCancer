@@ -1,6 +1,5 @@
 ﻿<div class="living_middle">
     <div class="container">
-
         <div class="col-md-12 wow fadeInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
             <ul class="feature">
                 <li> <i class="icon-heart"></i></li>
@@ -13,7 +12,10 @@
                     </p>
                 </li>
                 <div class="clearfix"></div>
-            </ul> 
+            </ul>
+
+
+
             <ul class="feature">
                 <li> <i class="icon-plus"></i></li>
                 <li class="feature_right">
@@ -25,11 +27,21 @@
                 </li>
                 <li><p>Acesse o item de menu <a href="#">Eventos</a>.</p></li>
                 <li><p>Preencha os campos do formulário e Compartilhe o seu evento!</p></li>
-            </ul>
-            </li>
-            <div class="clearfix"></div>
+
+                <div class="clearfix"></div>
             </ul>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    setTimeout(function () {
 
+        $("#menuHome").removeClass("active");
+        $("#menuSejaVoluntario").removeClass("active");
+        $("#menuEventos").removeClass("active");
+        $("#menuFotos").removeClass("active");
+        $("#menuContato").removeClass("active");
+
+        $("#menuSejaVoluntario").addClass("active");
+    }, 200);
+</script>

@@ -295,6 +295,7 @@
     <Content Include="Scripts\login.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\responsive-nav.js" />
+    <Content Include="Scripts\SejaVoluntario\SejaVoluntario.js" />
     <Content Include="Scripts\uisearch.js" />
     <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\_references.js" />
