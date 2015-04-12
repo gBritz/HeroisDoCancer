@@ -159,7 +159,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\buttonsocial.css" />
     <Content Include="Content\comentarios_modal.css" />
-    <Content Include="Content\datepicker.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -339,7 +338,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49867</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
