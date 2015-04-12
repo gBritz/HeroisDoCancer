@@ -102,5 +102,14 @@
     @RenderSection("scripts", required: false)
 
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.swipebox.min.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".swipebox").swipebox();
+            new WOW().init();
+        });
+    </script>
+
 </body>
 </html>
