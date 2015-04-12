@@ -19,7 +19,7 @@
             {
                 <fieldset id="body">
                     <fieldset>
-                        @Html.Label("E-mail")
+                        @Html.Label("Login")
                         @Html.TextBoxFor(v => v.Login)
                         @Html.ValidationMessageFor(v => v.Login)
                     </fieldset>
@@ -40,7 +40,7 @@
             }
         </div>
     </div>
-    <div id="dados-usuario" class="login" @(isAuthenticated ? String.Empty : sDisplayNone)>
+    <div id="dados-usuario" class="loginLogado" @(isAuthenticated ? String.Empty : sDisplayNone)>
         <img src="@(isAuthenticated ? session.Voluntario.Foto : String.Empty)" class="img-circle" />
 
         <span class="nome">@(isAuthenticated ? session.Voluntario.Nome : String.Empty)</span>
