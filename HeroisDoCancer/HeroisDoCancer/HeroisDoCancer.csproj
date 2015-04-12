@@ -214,6 +214,7 @@
     <Content Include="Content\images\star.png" />
     <Content Include="Content\images\star1.png" />
     <Content Include="Content\images\star2.png" />
+    <Content Include="Content\images\Thumbs.db" />
     <Content Include="Content\images\zoom.png" />
     <Content Include="Content\style.css" />
     <Content Include="Content\swipebox.css" />
@@ -278,7 +279,6 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Content\images\Thumbs.db" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\classie.js" />
