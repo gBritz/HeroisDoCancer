@@ -319,6 +319,7 @@
     <Content Include="Views\Home\_Login.cshtml" />
     <Content Include="Views\SejaVoluntario\Index.cshtml" />
     <Content Include="Views\Voluntario\Index.cshtml" />
+    <Content Include="Views\Galeria\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
